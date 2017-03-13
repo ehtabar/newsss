@@ -1,25 +1,18 @@
 /*
 Theme Name: Schema by MyThemeShop
-Theme URI: https://mythemeshop.com/themes/schema/
+Theme URI: http://mythemeshop.com/themes/schema/
 Author: MyThemeShop
-Author URI: https://mythemeshop.com/
+Author URI: http://mythemeshop.com/
 Description: Schema is a fast loading, ultra-SEO friendly WordPress theme that features rich snippets in order to help search engines identify all parts of your site and rank you higher.
-Version: 3.1.6
+Version: 3.1.9
+Text Domain: schema
+Domain Path: /lang
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tfoot, thead, th, article, aside, canvas, details, embed, figure, figcaption, p,  footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
-    font-family: "Vazir", "Ubuntu", "Helvetica", "Arial", "FreeSans", sans-serif;
-    vertical-align: baseline;
-}
-tbody, tr, td, table {
-    margin: 0;
-    padding: 0;
-    border: 1 solid #e0e0e0;
-    font-size: 100%;
-    font-family: "Vazir", "Ubuntu", "Helvetica", "Arial", "FreeSans", sans-serif;
     font: inherit;
     vertical-align: baseline;
 }
@@ -61,19 +54,15 @@ strong, b { font-weight: bold }
 em, i, cite { font-style: italic }
 small { font-size: 100% }
 figure { margin: 10px 0 }
-pre, code {
-   font-family: "Vazir", Courier, Vazir;
-   font-size: 14px;
-   line-height: 19px;
-   white-space: pre-wrap;
+code, pre {
+    font-weight: normal;
+    font-style: normal;
 }
-
 pre {
-   background-color: #e0e0e0;
-   margin-bottom: 20px;
-   overflow: auto;
-   padding: 20px;
-   border: 1px solid #eeeeee;
+    margin: 5px 0 20px 0;
+    line-height: 1.3em;
+    padding: 8px 10px;
+    overflow: auto;
 }
 code {
     padding: 0 8px;
@@ -91,7 +80,7 @@ address {
 }
 .wp-caption {
     background: #fff;
-    border: 0px solid #f0f0f0;
+    border: 1px solid #f0f0f0;
     max-width: 96%;
     padding: 5px 3px 10px;
     text-align: center;
@@ -114,25 +103,6 @@ dt {
     text-align: right;
     font-weight: bold;
 }
-@font-face {
-    font-family: "Vazir";
-    src: url("https://news.bidbarg.com/wp-content/themes/mts_schema/fonts/Vazir.eot");
-    src: url("https://news.bidbarg.com/wp-content/themes/mts_schema/fonts/Vazir.eot?#iefix") format("embedded-opentype"),
-        url("https://news.bidbarg.com/wp-content/themes/mts_schema/fonts/Vazir.woff") format("woff"),
-        url("https://news.bidbarg.com/wp-content/themes/mts_schema/fonts/Vazir.ttf") format("truetype"),
-        url("https://news.bidbarg.com/wp-content/themes/mts_schema/fonts/Vazir.svg#Vazir") format("svg");
-        font-weight: normal;
-}
-
-@font-face {
-    font-family: "Vazir";
-    src: url("https://news.bidbarg.com/wp-content/themes/mts_schema/fonts/Vazir-Bold.eot");
-    src: url("https://news.bidbarg.com/wp-content/themes/mts_schema/fonts/Vazir-Bold.eot?#iefix") format("embedded-opentype"),
-        url("https://news.bidbarg.com/wp-content/themes/mts_schema/fonts/Vazir-Bold.woff") format("woff"),
-        url("https://news.bidbarg.com/wp-content/themes/mts_schema/fonts/Vazir-Bold.ttf") format("truetype"),
-        url("https://news.bidbarg.com/wp-content/themes/mts_schema/fonts/Vazir-Bold.svg#Vazir-Bold") format("svg");   
-        font-weight: bold;
-}
 dd {
     margin: 0 0 0 110px;
     padding: 0 0 0.5em 0;
@@ -142,15 +112,15 @@ dd {
 body {
     font: 14px/1.5 Noto Sans, sans-serif;
     color: #555;
-    background-color: #e0e0e0;
+    background-color: #EBEBEB;
 }
 ::-moz-selection {
-    background: #4c4c4c;
+    background: #222;
     color: white;
     text-shadow: none;
 }
 ::selection {
-    background: #4c4c4c;
+    background: #222;
     color: white;
     text-shadow: none;
 }
@@ -164,7 +134,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     margin-bottom: 12px;
-    color: #4c4c4c;
+    color: #444;
 }
 h1 {
     font-size: 28px;
@@ -191,10 +161,10 @@ h6 {
 p { margin-bottom: 20px }
 a {
     text-decoration: none;
-    color: #1985f3;
+    color: #0274BE;
     transition: all 0.25s linear;
 }
-a:hover { color: #003399 }
+a:hover { color: #0274BE }
 a:link, a:visited, a:active { text-decoration: none }
 /*-[ Main container ]---------------*/
 .main-container {
@@ -236,7 +206,7 @@ header {
     float: left;
     margin: 0;
     padding: 0;
-    background: #1985f3;
+    background: #222;
 }
 #header h1, #header h2 {
     float: left;
@@ -254,7 +224,7 @@ div#regular-header {
     text-transform: uppercase;
     float: left;
     line-height: 1;
-    color: #4c4c4c;
+    color: #222;
 }
 #header #logo a {
     font-size: 28px;
@@ -302,7 +272,7 @@ div#regular-header {
 .widget-header .textwidget {
     float: left;
     margin-top: 46px;
-    border-left: 1px solid #c1c1c1;
+    border-left: 1px solid #cccccc;
     padding-left: 20px;
 }
 #primary-navigation .navigation .menu {
@@ -338,7 +308,7 @@ div.header-social-icons:before {
 .regular_header div#primary-nav {
     float: left;
     width: 100%;
-    border-bottom: 0px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 #primary-navigation { float: right }
 #primary-navigation .navigation ul ul { width: 200px }
@@ -365,7 +335,7 @@ div.header-social-icons:before {
 }
 #secondary-navigation .navigation ul ul li { background: #fff }
 #secondary-navigation .navigation ul li:hover, #secondary-navigation .navigation ul .current-menu-item { background: #fff }
-#secondary-navigation .navigation ul li:hover a { color: #343434 }
+#secondary-navigation .navigation ul li:hover a { color: #777 }
 #secondary-navigation a {
     text-align: left;
     text-decoration: none;
@@ -381,7 +351,7 @@ div.header-social-icons:before {
 #secondary-navigation a .sub {
     font-size: 11px;
     font-weight: normal;
-    color: #676767;
+    color: #9B9B9B;
 }
 .navigation {
     float: left;
@@ -398,7 +368,7 @@ div.header-social-icons:before {
 .navigation ul li a, .navigation ul li a:link, .navigation ul li a:visited { display: inline-block }
 .navigation > ul > .current a {
     background: transparent;
-    color: #4c4c4c !important;
+    color: #5a5a5a !important;
 }
 .navigation ul li li {
     background: #fff;
@@ -411,7 +381,7 @@ div.header-social-icons:before {
     padding-top: 0;
     z-index: 400;
     font-size: 12px;
-    color: #676767;
+    color: #798189;
     box-shadow: 0px 2px 1px 0px rgba(50, 50, 50, 0.2);
 }
 .navigation ul ul li {
@@ -427,7 +397,7 @@ div.header-social-icons:before {
     background: transparent;
     border-right: 0;
     border-radius: 0;
-    border-bottom: 0px solid   rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid   rgba(255, 255, 255, 0.05);
     margin: 0;
 }
 #primary-navigation .navigation ul ul a, #primary-navigation .navigation ul ul a:link { width: 135px }
@@ -468,8 +438,7 @@ a#pull { display: none }
     padding: 3.994%;
     background: #fff;
     box-sizing: border-box;
-    box-shadow: 0 3px 3px rgba(0,0,0,.15);
-    border-radius: 4px;
+    box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.1);
 }
 #content_box {
     float: left;
@@ -516,8 +485,7 @@ a#pull { display: none }
     padding: 4%;
     background: #fff;
     box-sizing: border-box;
-    box-shadow: 0 3px 3px rgba(0,0,0,.15);
-    border-radius: 4px;
+    box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.1);
 }
 .ss-full-width #content_box {
     padding-right: 0;
@@ -561,14 +529,11 @@ a#pull { display: none }
     margin-bottom: 0;
     width: 100%;
     float: left;
-    max-width: 150px;
-    max-height: 150px;
 }
 .title { clear: both }
 .single-title {
     float: left;
     width: 100%;
-    font-family: 'Vazir';
 }
 .page h1.title {
     padding-top: 0;
@@ -576,13 +541,13 @@ a#pull { display: none }
 }
 .post-info {
     display: block;
-    color: #c1c1c1;
+    color: #AAAAAA;
     float: left;
     clear: both;
     width: 100%;
     margin-bottom: 20px;
 }
-header .post-info a { color: #343434 }
+header .post-info a { color: #777 }
 .post-info > span { margin-right: 20px }
 /**********latest-posts***********/
 article header {
@@ -598,7 +563,7 @@ article header {
 .featured-category-title a {
     float: left;
     width: 100%;
-    color: #4c4c4c;
+    color: #222222;
     margin-top: 30px;
 }
 .latestPost {
@@ -687,11 +652,9 @@ article .iconlist li { list-style-type: none }
 input, textarea, select {
     padding: 8px 12px;
     font-size: 14px;
-    color: #4c4c4c;
-    border: 1px solid #e0e0e0;
+    color: #444;
+    border: 1px solid #E4E4E4;
     font-family: inherit;
-    border-radius : 4px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.15);
 }
 textarea {
     overflow: auto;
@@ -699,7 +662,7 @@ textarea {
 }
 select {
     padding: 6px 10px;
-    border-color: #c1c1c1;
+    border-color: #D8D8D8;
     width: 100%;
 }
 input:focus, textarea:focus {
@@ -710,35 +673,34 @@ table {
     width: 100%;
     text-align: left;
     margin-bottom: 25px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #E4E4E4;
 }
 thead {
-    background: #eeeeee;
+    background: #F7F8F9;
     font-size: 14px;
-    color: #4c4c4c;
+    color: #585F65;
 }
 table th, table td {
     padding: 7px 15px;
     text-align: left;
-    border: 1px solid #e0e0e0;
 }
 thead th { padding: 14px }
 tbody th {
     font-weight: normal;
-    border-bottom: 0px solid #e0e0e0;
+    border-bottom: 1px solid #E4E4E4;
 }
 /*-[ Line ]---------------------*/
 hr {
     border: none;
-    border-bottom: 0px solid #e0e0e0;
-    border-bottom: 0px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid #E5E5E5;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     width: 297px;
     margin: 35px 0;
     clear: both;
     position: relative;
 }
 /*-[ Search Form ]------------------*/
-#sidebar .widget.widget_search, #sidebar .widget.mts_subscribe_widget, #sidebar .widget.widget_product_search { background: #fff }
+#sidebar .widget.widget_search, #sidebar .widget.mts_subscribe_widget, #sidebar .widget.widget_product_search { background: #222 }
 #sidebar .widget.widget_search h3 { color: #fff }
 #searchform {
     padding: 0;
@@ -746,7 +708,6 @@ hr {
     clear: both;
     width: 100%;
     position: relative;
-
 }
 .article #searchform { max-width: 300px }
 #searchform fieldset { float: left }
@@ -853,14 +814,13 @@ input::-webkit-input-speech-button {
     background: #fff;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 3px 3px rgba(0,0,0,.15);
-    border-radius: 4px;
+    box-shadow: 0px 0px 1px 0px rgba(50, 50, 50, 0.1);
 }
 .sidebar .widget h3 { text-transform: uppercase }
 .widget .title {
     font-weight: bold;
     text-transform: uppercase;
-    color: #4c4c4c;
+    color: #545E68;
     font-size: 12px;
 }
 .widget li {
@@ -895,7 +855,7 @@ footer .widget.widget_rss .widget-title a { color: #fff }
     clear: none;
     width: auto;
     float: none;
-    color: #343434;
+    color: #777;
     margin-bottom: 0;
 }
 .widget .post-info > span {
@@ -904,8 +864,8 @@ footer .widget.widget_rss .widget-title a { color: #fff }
 }
 .widget .post-info > span:before {
     position: absolute;
-    content: "\f111";
-    background: #343434;
+    content: "";
+    background: #777777;
     border-radius: 50%;
     width: 3px;
     height: 3px;
@@ -914,8 +874,8 @@ footer .widget.widget_rss .widget-title a { color: #fff }
     right: -10px;
 }
 .widget .post-info > span:last-child:before { display: none }
-.widget .thecomment .comm { color: #343434!important }
-#sidebar #sidebar-search { background: #4c4c4c }
+.widget .thecomment .comm { color: #777!important }
+#sidebar #sidebar-search { background: #222 }
 #sidebar #sidebar-search h3, #sidebar .widget.widget_product_search h3, #sidebar .widget.mts_subscribe_widget h3 { color: #fff }
 /*-[ Social Buttons ]--------------------------*/
 .share-item.facebookbtn, .share-item.linkedinbtn, .share-item.stumblebtn { width: 92px }
@@ -1006,7 +966,7 @@ footer .widget.widget_rss .widget-title a { color: #fff }
 .social-profile-icons .social-reddit a { background: #ff4400 }
 /*-[ Footer ]-------------------*/
 footer {
-    background: #4c4c4c;
+    background: #222;
     margin-top: 30px;
     position: relative;
     overflow: hidden;
@@ -1036,7 +996,7 @@ footer .container {
 .f-widget a { color: rgba(255, 255, 255, 0.45) }
 .f-widget ul li { margin-bottom: 5px }
 .f-widget .top-week li a { font-size: 15px }
-.f-widget #s { border: 0px solid rgba(255, 255, 255, 0.05) }
+.f-widget #s { border: 1px solid rgba(255, 255, 255, 0.05) }
 .f-widget #s::-webkit-input-speech-button { margin-right: 8px }
 .f-widget #searchform .fa-search {
     background: rgba(255, 255, 255, 0.2);
@@ -1049,8 +1009,8 @@ footer .container {
 }
 .widgets-num-4 .f-widget.last { margin-right: 0 }
 .f-widget .ajax-search-results-container {
-    background: #1f1f1f;
-    color: #c1c1c1;
+    background: #1c1c1c;
+    color: #a5a5a5;
 }
 .f-widget .ajax-search-results-container.loading:after { background-color: rgba(0,0,0,0.8) }
 .f-widget .ajax-search-results-container a { color: #fff }
@@ -1060,7 +1020,7 @@ footer .container {
     clear: both;
     padding-bottom: 17px;
     padding-top: 20px;
-    background: #343434;
+    background: #fff;
 }
 #copyright-note {
     width: 100%;
@@ -1094,7 +1054,7 @@ footer .container {
     transition: all 0.25s linear 0s;
     width: 20px;
     z-index: 25;
-    background: #4c4c4c;
+    background: #222;
     text-align: center;
     border-radius: 3px;
 }
@@ -1134,10 +1094,10 @@ footer .container {
 }
 .related-posts .title a {
     font-size: 16px!important;
-    color: #4c4c4c!important;
+    color: #222!important;
     font-weight: 400!important;
 }
-.related-posts .title a:hover { color: #1985f3!important }
+.related-posts .title a:hover { color: #0274be!important }
 .related-posts article header { margin-bottom: 0 }
 /*-[ Post Tags ]---------------------------------*/
 .tags {
@@ -1151,7 +1111,7 @@ footer .container {
     margin: 0 0 30px -6.8%;
     padding: 30px 6.8%;
     min-height: 180px;
-    background-color: #4c4c4c;
+    background-color: #222;
     float: left;
     clear: both;
     width: 100%;
@@ -1197,12 +1157,12 @@ footer .container {
     margin-bottom: 3px;
     float: left;
     margin-right: 3px;
-    background: #4c4c4c;
+    background: #222;
     color: #FFFFFF!important;
     transition: all 0.25s linear;
     border-radius: 3px;
 }
-.tagcloud a:hover, .widget .wpt_widget_content #tags-tab-content ul li a:hover { background: #4c4c4c }
+.tagcloud a:hover, .widget .wpt_widget_content #tags-tab-content ul li a:hover { background: #222 }
 /*-[ Ad Widgets ]------------------------------*/
 .ad-125 ul {
     float: left;
@@ -1232,8 +1192,8 @@ footer .container {
 #wp-calendar td {
     text-align: center;
     padding: 7px 0;
-    border-top: 1px solid #eeeeee;
-    border-right: 1px solid #eeeeee;
+    border-top: 1px solid #EDEDED;
+    border-right: 1px solid #EDEDED;
 }
 #wp-calendar caption {
     padding-bottom: 10px;
@@ -1242,7 +1202,7 @@ footer .container {
     font-size: 15px;
     color: #FFF;
     text-transform: uppercase;
-    background: #4c4c4c;
+    background: #222;
     padding: 12px 15px;
     text-align: left;
 }
@@ -1272,7 +1232,7 @@ footer #wp-calendar caption { background: rgba(255, 255, 255, 0.05) }
     padding-top: 7px;
     padding-bottom: 9px;
 }
-.cnumber { color: #1985f3 }
+.cnumber { color: #2DB2EB }
 #comments {
     padding: 0;
     background-color: #fff;
@@ -1302,7 +1262,7 @@ ul.children .commentImageLeft {
     width: 60px;
     height: 90px;
     border-left: 1px solid #c1bbb6;
-    border-bottom: 0px solid #c1bbb6;
+    border-bottom: 1px solid #c1bbb6;
     position: absolute;
     top: -50px;
     left: -70px;
@@ -1313,7 +1273,7 @@ input.text-input, #commentform input {
 }
 input#author, input#email, input#url {
     max-width: 300px;
-    border: 0px solid #e0e0e0;
+    border: 1px solid #E4E4E4;
     background: #fff;
     max-width: 100%;
     margin-right: 10px;
@@ -1334,7 +1294,7 @@ input#author, input#email, input#url, #comment { transition: all 0.25s ease-in-o
 }
 #commentform input#submit, #mtscontact_submit {
     line-height: 1;
-    background-color: #1985f3;
+    background-color: #0274BE;
     padding: 12px 15px;
     color: #fff;
     text-decoration: none;
@@ -1346,7 +1306,7 @@ input#author, input#email, input#url, #comment { transition: all 0.25s ease-in-o
     border-radius: 3px;
 }
 #commentform input#submit:hover, #mtscontact_submit:hover {
-    background: #4c4c4c;
+    background: #222;
     color: #fff;
 }
 #mtscontact_submit {
@@ -1441,7 +1401,7 @@ ol.commentlist {
 /*-[ Comment Form ]----------------------------*/
 #commentform textarea {
     width: 95.5%;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #E4E4E4;
     background: #fff;
     padding: 2%;
     line-height: 25px;
@@ -1512,14 +1472,14 @@ ol.commentlist {
     line-height: 1;
     text-decoration: none;
     padding: 10px 13px;
-    background: #1985f3;
+    background: #0274BE;
     min-width: 36px;
     box-sizing: border-box;
     border-radius: 3px;
     text-align: center;
 }
 .pagination a, #load-posts a, .single .pagination > .current .currenttext, .pagination .page-numbers.dots {
-    background: #ffad00;
+    background: #222;
     margin: 0 5px 0 0;
     display: inline-block;
     float: left;
@@ -1542,7 +1502,7 @@ ol.commentlist {
 .pagination .nav-previous { float: left }
 .pagination .nav-next { float: right }
 .pagination .nav-previous a, .pagination .nav-next a { color: #fff!important }
-.pagination  .nav-previous a:hover, .pagination .nav-next a:hover { background-color: #4c4c4c }
+.pagination  .nav-previous a:hover, .pagination .nav-next a:hover { background-color: #222 }
 .single .pagination a .currenttext, .single .pagination a .current {
     padding: 0;
     background: rgba(0, 0, 0, 0)!important;
@@ -1580,7 +1540,7 @@ ol.commentlist {
 .mtscontact_error { color: #B90101 }
 /*-[ AJAX search results ]------------------*/
 .widget_search { overflow: visible }
-.ajax-search-box-open #s { border-bottom: 0px solid #fff }
+.ajax-search-box-open #s { border-bottom: 1px solid #fff }
 .ajax-search-results-container {
     position: absolute;
     top: 39px;
@@ -1589,7 +1549,7 @@ ol.commentlist {
     width: 100%;
     z-index: 9;
     background: #FFF;
-    border: 0px solid #fff;
+    border: 1px solid #fff;
     border-top: none;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.4);
 }
@@ -1661,16 +1621,16 @@ pre {
     padding: 25px 15px 15px;
     margin: 15px 0;
     position: relative;
-    background: #eeeeee;
-    font-family: Vazir;
-    color: #1f1f1f;
+    background: #222;
+    font-family: monospace;
+    color: #aaa;
     box-sizing: border-box;
 }
 pre:before {
     content: "\f121";
     color: #FFF;
     position: absolute;
-    font-size: 0px;
+    font-size: 18px;
     right: 14px;
     top: 6px;
     font-family: fontawesome;
@@ -1733,13 +1693,13 @@ pre:before {
 }
 .widget .wp_review_tab_widget_content .entry-title, .sidebar .wpt_widget_content a { font-weight: normal }
 .widget .wp_review_tab_widget_content .wp-review-tabs.has-4-tabs .tab_title a, .widget .wpt_widget_content .wpt-tabs.has-4-tabs .tab_title a {
-    border-bottom: 0px solid #1B1B1B;
+    border-bottom: 1px solid #1B1B1B;
     border-left: 1px solid #1B1B1B;
 }
 .widget .wp_review_tab_widget_content .wp-review-tabs.has-4-tabs .tab_title:nth-child(2n) a, .widget .wpt_widget_content .wpt-tabs.has-4-tabs .tab_title:nth-child(2n) a { border-right: none }
 .widget .wpt_widget_content .tab_title a, .widget .wp_review_tab_widget_content .tab_title a {
-    background: #343434;
-    color: #4c4c4c;
+    background: #333;
+    color: #7E7D7D;
     border: none;
     padding: 14px 0;
     line-height: 1;
@@ -1748,7 +1708,7 @@ pre:before {
     border-left: 1px solid #1B1B1B;
 }
 .widget .wpt_widget_content .tab_title.selected a, .widget .wp_review_tab_widget_content .tab_title.selected a {
-    background: #4c4c4c;
+    background: #222;
     color: #fff;
     border-bottom: 0;
 }
@@ -1761,10 +1721,10 @@ pre:before {
 .widget .review-total-only.small-thumb, .widget .review-total-only {
     font-size: 13px;
     padding: 0;
-    color: #4c4c4c;
+    color: #222;
     background: transparent;
 }
-footer .widget .review-total-only.small-thumb, footer .widget .review-total-only { color: #343434 }
+footer .widget .review-total-only.small-thumb, footer .widget .review-total-only { color: #777 }
 .widget .review-total-only.large-thumb, .widget li:first-child .review-total-only.large-thumb { right: 0 }
 footer .widget .review-total-only.large-thumb, footer .widget li:first-child .review-total-only.large-thumb {
     top: 15px;
@@ -1772,7 +1732,7 @@ footer .widget .review-total-only.large-thumb, footer .widget li:first-child .re
 }
 .widget .review-total-only.large-thumb {
     padding: 4px 10px;
-    background: #4c4c4c;
+    background: #222;
     color: #fff;
 }
 footer .review-total-only.small-thumb .review-result-wrapper i { color: #fff!important }
@@ -1793,16 +1753,16 @@ footer .widget .wp_review_tab_widget_content .tab-content li, footer .widget .wp
     margin-bottom: 0;
 }
 .widget .wpt_widget_content .wpt-postmeta, .widget .wpt_comment_content, .widget .wpt_excerpt, .widget .wp_review_tab_widget_content .wp-review-tab-postmeta {
-    color: #fff;
+    color: #aaa;
     font-size: 14px!important;
     line-height: 1.6;
     overflow: hidden;
 }
 footer .widget .wpt_widget_content .wpt-postmeta, footer .widget .wpt_comment_content, footer .widget .wpt_excerpt, footer .wp_review_tab_widget_content .wp-review-tab-postmeta { color: rgba(255, 255, 255, 0.25) }
 .widget .has-4-tabs .wpt_widget_content .tab_title a, .widget .has-4-tabs .wp_review_tab_widget_content .tab_title a {
-    background: #343434;
+    background: #333;
     border-left: 1px solid #1B1B1B;
-    border-bottom: 0px solid #1B1B1B;
+    border-bottom: 1px solid #1B1B1B;
 }
 footer .widget .wpt_widget_content .tab_title.selected a, footer .widget .wp_review_tab_widget_content .tab_title.selected a {
     background: rgba(255, 255, 255, 0.20);
@@ -1817,7 +1777,7 @@ footer .widget .wpt_widget_content .wpt-pagination a, footer .widget .wp_review_
 .mts-cart {
     z-index: 1;
     float: right;
-    color: #343434;
+    color: #777;
 }
 #primary-navigation .mts-cart span a {
     display: inline-block;
@@ -1875,4 +1835,3 @@ footer .widget .wpt_widget_content .wpt-pagination a, footer .widget .wp_review_
     transition: all 0.25s ease;
 }
 .primary-slider .owl-controls .owl-dot.active span { cursor: default }
-.fixed-footer{position:fixed;bottom:0;right:0;left:0;background:#1985f3;text-align:center;padding:10px;z-index:2}@media (max-width:980px){.fixed-footer{padding:15px}.fixed-footer-text{display:block;margin-top:10px}}.fixed-footer strong{direction:ltr;display:inline-block}.fixed-footer-btn{display:inline-block;border:2px solid #ffad00;color:#fff;background:#ffad00;padding:5px 15px;border-radius:3px;margin-left:10px}.fixed-footer-btn:hover{border:2px solid #e69b00;background-color:#e69b00;color:#fff;text-decoration:none}
