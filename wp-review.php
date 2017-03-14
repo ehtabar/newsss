@@ -3,7 +3,7 @@
  * Plugin Name: WP Review Pro
  * Plugin URI: http://mythemeshop.com/plugins/wp-review-pro/
  * Description: Create reviews! Choose from Stars, Percentages, Circles or Points for review scores. Supports Retina Display, WPMU and Unlimited Color Schemes.
- * Version: 2.1.5
+ * Version: 2.1.8
  * Author: MyThemesShop
  * Author URI: http://mythemeshop.com/
  *
@@ -118,7 +118,6 @@ if (defined( 'MTS_WP_REVIEW_DB_TABLE' )) {
 
 		/* Loads the admin functions. */
 		require_once( WP_REVIEW_ADMIN . 'admin.php' );
-		require_once( WP_REVIEW_ADMIN . 'main.php' );
 
 		/* Loads the meta boxes. */
 		require_once( WP_REVIEW_ADMIN . 'metaboxes.php' );

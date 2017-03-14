@@ -1,14 +1,14 @@
-# Copyright (C) 2016 WP Review Pro
+# Copyright (C) 2017 WP Review Pro
 # This file is distributed under the same license as the WP Review Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Review Pro 2.1.4\n"
+"Project-Id-Version: WP Review Pro 2.1.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-review-pro\n"
-"POT-Creation-Date: 2016-08-15 13:52:59+00:00\n"
+"POT-Creation-Date: 2017-01-26 17:54:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Remove Image"
 msgstr ""
 
-#: admin/metaboxes.php:30 includes/comments.php:603
+#: admin/metaboxes.php:30 includes/comments.php:604
 msgid "Review"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgstr ""
 #: admin/metaboxes.php:842 admin/metaboxes.php:889 admin/metaboxes.php:944
 #: admin/metaboxes.php:987 admin/metaboxes.php:1016 admin/metaboxes.php:1170
 #: admin/metaboxes.php:1199 admin/metaboxes.php:1258 admin/metaboxes.php:1290
-#: admin/metaboxes.php:1319 includes/comments.php:486
+#: admin/metaboxes.php:1319 includes/comments.php:487
 msgid "URL"
 msgstr ""
 
@@ -216,11 +216,15 @@ msgid "User Rating Type"
 msgstr ""
 
 #: admin/metaboxes.php:537
-msgid "Note: If you are changing user rating type and post already have user ratings, please edit or remove existing ratings if needed."
+msgid ""
+"Note: If you are changing user rating type and post already have user "
+"ratings, please edit or remove existing ratings if needed."
 msgstr ""
 
 #: admin/metaboxes.php:543
-msgid "Hide Comments Total Rating ( if \"Comment Rating Only\" or \"Both\" is checked )"
+msgid ""
+"Hide Comments Total Rating ( if \"Comment Rating Only\" or \"Both\" is "
+"checked )"
 msgstr ""
 
 #: admin/metaboxes.php:547
@@ -357,7 +361,7 @@ msgstr ""
 
 #: admin/metaboxes.php:926 admin/metaboxes.php:1063 admin/metaboxes.php:1181
 #: admin/metaboxes.php:1272 admin/metaboxes.php:1301 includes/comments.php:157
-#: includes/comments.php:476
+#: includes/comments.php:477
 msgid "Name"
 msgstr ""
 
@@ -580,7 +584,9 @@ msgid "General Settings"
 msgstr ""
 
 #: admin/options.php:175
-msgid "There is a filter set for the review location that may modify the options below."
+msgid ""
+"There is a filter set for the review location that may modify the options "
+"below."
 msgstr ""
 
 #: admin/options.php:180
@@ -608,7 +614,9 @@ msgid "WP Review"
 msgstr ""
 
 #: admin/options.php:200
-msgid "Use WP Review comments template. Better chances for out of the box integration."
+msgid ""
+"Use WP Review comments template. Better chances for out of the box "
+"integration."
 msgstr ""
 
 #: admin/options.php:205
@@ -668,7 +676,9 @@ msgid "Registered image sizes: "
 msgstr ""
 
 #: admin/options.php:263
-msgid "There is a filter set for the review colors that may modify the options below."
+msgid ""
+"There is a filter set for the review colors that may modify the options "
+"below."
 msgstr ""
 
 #: admin/options.php:308
@@ -716,11 +726,15 @@ msgid "Force Enable User Ratings"
 msgstr ""
 
 #: admin/options.php:442
-msgid "Enable user ratings on all posts, pages and custom post types where it is not disabled explicitly."
+msgid ""
+"Enable user ratings on all posts, pages and custom post types where it is "
+"not disabled explicitly."
 msgstr ""
 
 #: admin/options.php:456
-msgid "Here you can import your existing user ratings from WP Review 1.x and WP Review Pro 1.x."
+msgid ""
+"Here you can import your existing user ratings from WP Review 1.x and WP "
+"Review Pro 1.x."
 msgstr ""
 
 #: admin/options.php:457
@@ -848,12 +862,12 @@ msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: includes/comments.php:151 includes/comments.php:208
-#: includes/comments.php:250 includes/comments.php:455
+#: includes/comments.php:250 includes/comments.php:456
 msgid "Review Title"
 msgstr ""
 
 #: includes/comments.php:152 includes/comments.php:217
-#: includes/comments.php:253 includes/comments.php:460
+#: includes/comments.php:253 includes/comments.php:461
 #: includes/functions.php:1585
 msgid "Rating"
 msgstr ""
@@ -862,7 +876,7 @@ msgstr ""
 msgid "Rating *"
 msgstr ""
 
-#: includes/comments.php:160 includes/comments.php:481
+#: includes/comments.php:160 includes/comments.php:482
 msgid "Email"
 msgstr ""
 
@@ -874,47 +888,59 @@ msgstr ""
 msgid "WP Review Rating (%s)"
 msgstr ""
 
-#: includes/comments.php:448
-msgid "Edit Comment"
+#: includes/comments.php:411
+msgid "Did you find this review helpful?"
+msgstr ""
+
+#: includes/comments.php:412
+msgid "Yes"
+msgstr ""
+
+#: includes/comments.php:414
+msgid "No"
 msgstr ""
 
 #: includes/comments.php:449
-msgid "Reply to Comment"
+msgid "Edit Comment"
 msgstr ""
 
 #: includes/comments.php:450
+msgid "Reply to Comment"
+msgstr ""
+
+#: includes/comments.php:451
 msgid "Add new Comment"
 msgstr ""
 
-#: includes/comments.php:467 includes/comments.php:603
+#: includes/comments.php:468 includes/comments.php:604
 msgid "Comment"
 msgstr ""
 
-#: includes/comments.php:493
+#: includes/comments.php:494
 msgid "Add Comment"
 msgstr ""
 
-#: includes/comments.php:494
+#: includes/comments.php:495
 msgid "Update Comment"
 msgstr ""
 
-#: includes/comments.php:495
+#: includes/comments.php:496
 msgid "Submit Reply"
 msgstr ""
 
-#: includes/comments.php:496
+#: includes/comments.php:497
 msgid "Cancel"
 msgstr ""
 
-#: includes/comments.php:558
+#: includes/comments.php:559
 msgid "Edit this item inline"
 msgstr ""
 
-#: includes/comments.php:558
+#: includes/comments.php:559
 msgid "Quick Edit"
 msgstr ""
 
-#: includes/comments.php:588
+#: includes/comments.php:589
 msgid "A rating is required! Hit the back button to add your rating."
 msgstr ""
 
@@ -956,7 +982,9 @@ msgid "No Rating"
 msgstr ""
 
 #: includes/functions.php:1637
-msgid "Thank you for updating WP Review Pro. Your existing user ratings will show up after importing them in %s."
+msgid ""
+"Thank you for updating WP Review Pro. Your existing user ratings will show "
+"up after importing them in %s."
 msgstr ""
 
 #: includes/functions.php:1637
@@ -1070,6 +1098,7 @@ msgstr ""
 #: wp-review.php:39
 msgid "Please deactivate WP Review plugin first to use the Premium features!"
 msgstr ""
+
 #. Plugin Name of the plugin/theme
 msgid "WP Review Pro"
 msgstr ""
@@ -1079,7 +1108,9 @@ msgid "http://mythemeshop.com/plugins/wp-review-pro/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Create reviews! Choose from Stars, Percentages, Circles or Points for review scores. Supports Retina Display, WPMU and Unlimited Color Schemes."
+msgid ""
+"Create reviews! Choose from Stars, Percentages, Circles or Points for review "
+"scores. Supports Retina Display, WPMU and Unlimited Color Schemes."
 msgstr ""
 
 #. Author of the plugin/theme

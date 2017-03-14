@@ -58,7 +58,7 @@ function wp_review_comment_count( $count ) {
 
 if ( !function_exists( 'wp_review_comments' ) ) {
 	function wp_review_comments( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment; 
+		$GLOBALS['comment'] = $comment;
 	    //$mts_options = get_option( MTS_THEME_NAME ); ?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
 			<?php
@@ -148,7 +148,7 @@ function wp_review_comment_fields_replace( $fields ) {
 	//echo '<!-- '.print_r($fields,1).' -->'; return $fields;
 
 	$review_add_fields = array(
-		'review_title' => '<div class="wp-review-comment-form-title"><input type="text" name="wp_review_comment_title" class="wp-review-comment-title-field-input" size="30" id="wp-review-comment-title-field" placeholder="'.esc_attr__('Review Title', 'wp-review').'" value="" /></div>', 
+		'review_title' => '<div class="wp-review-comment-form-title"><input type="text" name="wp_review_comment_title" class="wp-review-comment-title-field-input" size="30" id="wp-review-comment-title-field" placeholder="'.esc_attr__('Review Title', 'wp-review').'" value="" /></div>',
 		'review_rating' => '<div class="wp-review-comment-form-rating">'.'<label class="review-comment-field-msg">'.( empty( $options['require_rating'] ) ? __('Rating', 'wp-review') : __('Rating *', 'wp-review') ).'</label>'.wp_review_comment_rating_input().'</div>'
 	);
 	$fields = $review_add_fields + $fields; // prepend our new fields
@@ -193,7 +193,7 @@ function wp_review_comment_fields_extend() {
     global $post;
     $options = get_option('wp_review_options');
     $review_through_comment = in_array( wp_review_get_user_rating_setup( $post->ID ), array( WP_REVIEW_REVIEW_COMMENT_ONLY, WP_REVIEW_REVIEW_ALLOW_BOTH ) );
-    
+
     if ( $review_through_comment ) {
         $userReview = 0;
         $user_id = 0;
@@ -225,7 +225,7 @@ function wp_review_comment_fields_extend() {
     }
 }
 
- 
+
 /**
  * Add the title to our admin area, for editing, etc
  */
@@ -233,9 +233,9 @@ add_action( 'add_meta_boxes_comment', 'wp_review_comment_add_meta_box' );
 function wp_review_comment_add_meta_box() {
 	global $wp_review_rating_types, $comment;
 	$type = wp_review_get_post_user_review_type( $comment->comment_post_ID );
-    add_meta_box( 'wp-review-comment-rating', sprintf(__( 'WP Review Rating (%s)' ), $wp_review_rating_types[$type]['label']), 'wp_review_comment_meta_box_fields', 'comment', 'normal', 'high' );
+    add_meta_box( 'wp-review-comment-rating', sprintf(__( 'WP Review Rating (%s)', 'wp-review' ), $wp_review_rating_types[$type]['label']), 'wp_review_comment_meta_box_fields', 'comment', 'normal', 'high' );
 }
- 
+
 function wp_review_comment_meta_box_fields( $comment ) {
 	$comment_id = $comment->comment_ID;
 	$rating = '';
@@ -254,7 +254,7 @@ function wp_review_comment_meta_box_fields( $comment ) {
     <input type="number" class="small-text" name="wp_review_comment_rating" value="<?php echo esc_attr( $rating ); ?>" id="wp_review_comment_rating" />
     <?php
 }
- 
+
 /**
  * Save our comment (from the admin area)
  */
@@ -292,7 +292,7 @@ function wp_review_comment_edit_comment( $comment_id ) {
 		update_comment_meta( $comment_id, WP_REVIEW_COMMENT_TITLE_METAKEY, $title );
 	}
 }
- 
+
 /**
  * Save our title & rating (from the front end)
  */
@@ -305,9 +305,9 @@ function wp_review_comment_insert_comment( $comment_id, $comment_approved ) {
 
 	if ( isset( $_POST['wp-review-user-rating-val'] ) ) {
 		/*
-		
+
 		if ( is_array( $_POST['wp_review_comment_rating'] ) ) {
-			
+
 			$comment = get_comment( $comment_id );
 			$items = get_post_meta( $comment->comment_post_ID, 'wp_review_item', true );
 			$raw_rating = filter_input( INPUT_POST, 'wp_review_comment_rating', FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY );
@@ -349,7 +349,7 @@ function wp_review_comment_insert_comment( $comment_id, $comment_approved ) {
  */
 add_filter( 'comment_text', 'wp_review_comment_add_title_to_text', 99, 2 );
 function wp_review_comment_add_title_to_text( $text, $comment ) {
-    
+
     if ( is_admin() ) {
 		$comment_id = $comment->comment_ID;
     	$title = get_comment_meta( $comment_id, WP_REVIEW_COMMENT_TITLE_METAKEY, true );
@@ -370,7 +370,7 @@ function wp_review_comment_add_title_to_text( $text, $comment ) {
 	    if ( $rating ) {
 	        $rating_html = wp_review_comment_rating( $rating, $comment_id );
 	    }
-		
+
     	$text .= '<div id="inline-commentreview-'.$comment_id.'" class="hidden">
     	<input type="hidden" class="comment-review-title" value="'.esc_attr($title).'">
     	<input type="hidden" class="comment-review-rating" value="'.esc_attr($rating).'">
@@ -379,7 +379,7 @@ function wp_review_comment_add_title_to_text( $text, $comment ) {
 
     	return $title_html . $rating_html . $text;
     }
-    	
+
 
 	$title = '';
 	$review = '';
@@ -397,8 +397,8 @@ function wp_review_comment_add_title_to_text( $text, $comment ) {
         /*
          * user can give review feedback (useful or not)
          */
-        
-        
+
+
 	    if ( ! empty( $options['allow_comment_feedback'] ) ) {
 		    $user_id = get_current_user_id();
 		    $user_ip = wp_review_get_user_ip();
@@ -407,14 +407,15 @@ function wp_review_comment_add_title_to_text( $text, $comment ) {
 		    $helpful = absint( get_comment_meta( $comment->comment_ID, 'wp_review_comment_helpful', true ) );
 		    $unhelpful = absint( get_comment_meta( $comment->comment_ID, 'wp_review_comment_unhelpful', true ) );
 
-		    $feedback = '<p class="wp-review-feedback">Did you find this review helpful? ';
-		    $feedback .= '<a class="review-btn' . ( in_array( $user_ip, $voted_helpful ) ? ' voted' : '' ) . '" data-value="yes" data-comment-id="' . $comment->comment_ID . '" href="#">Yes';
+		    $feedback = '<p class="wp-review-feedback">';
+		    $feedback .= __( 'Did you find this review helpful?', 'wp-review' ) . ' ';
+		    $feedback .= '<a class="review-btn' . ( in_array( $user_ip, $voted_helpful ) ? ' voted' : '' ) . '" data-value="yes" data-comment-id="' . $comment->comment_ID . '" href="#">' . __( 'Yes', 'wp-review' );
 		    $feedback .= ( $helpful > 0 ? ( ' <span class="feedback-count">(' . $helpful . ')</span>' ) : ' <span class="feedback-count"></span>')  . '</a>';
-		    $feedback .= '<a class="review-btn' . ( in_array( $user_ip, $voted_unhelpful ) ? ' voted' : '' ) . '" data-value="no" data-comment-id="' . $comment->comment_ID . '" href="#">No';
+		    $feedback .= '<a class="review-btn' . ( in_array( $user_ip, $voted_unhelpful ) ? ' voted' : '' ) . '" data-value="no" data-comment-id="' . $comment->comment_ID . '" href="#">' . __( 'No', 'wp-review' );
 		    $feedback .= ( $unhelpful > 0 ? ( ' <span class="feedback-count">(' . $unhelpful . ')</span>' ) : ' <span class="feedback-count"></span>')  . '</a>';
 		    $feedback .= '</p>';
 	    }
-	    
+
     }
 
     return $title . $review . '<div class="comment-text-inner">' . $text . '</div>' . $feedback;
@@ -445,26 +446,26 @@ function wp_review_comment_reply_filter( $output, $args ) {
 	<?php endif; ?>
 	<fieldset class="comment-reply">
 	<legend>
-	<span class="hidden" id="editlegend"><?php _e( 'Edit Comment', 'mts-' ); ?></span>
-	<span class="hidden" id="replyhead"><?php _e( 'Reply to Comment' ); ?></span>
-	<span class="hidden" id="addhead"><?php _e( 'Add new Comment' ); ?></span>
+	<span class="hidden" id="editlegend"><?php _e( 'Edit Comment', 'wp-review' ); ?></span>
+	<span class="hidden" id="replyhead"><?php _e( 'Reply to Comment', 'wp-review' ); ?></span>
+	<span class="hidden" id="addhead"><?php _e( 'Add new Comment', 'wp-review' ); ?></span>
 	</legend>
 
 	<div id="editwpreview">
 	<div class="inside">
-	<label for="wp_review_comment_title"><?php _e( 'Review Title' ) ?></label>
+	<label for="wp_review_comment_title"><?php _e( 'Review Title', 'wp-review' ) ?></label>
 	<input type="text" name="wp_review_comment_title" size="50" value="" id="wp_review_comment_title" />
 	</div>
 
 	<div class="inside">
-	<label for="wp_review_comment_title"><?php _e('Rating') ?></label>
+	<label for="wp_review_comment_title"><?php _e( 'Rating', 'wp-review' ) ?></label>
 	<input type="text" name="wp_review_comment_rating" size="50" value="" id="wp_review_comment_rating" />
 	</div>
 	</div>
 	</div>
 
 	<div id="replycontainer">
-	<label for="replycontent" class="screen-reader-text"><?php _e( 'Comment' ); ?></label>
+	<label for="replycontent" class="screen-reader-text"><?php _e( 'Comment', 'wp-review' ); ?></label>
 	<?php
 	$quicktags_settings = array( 'buttons' => 'strong,em,link,block,del,ins,img,ul,ol,li,code,close' );
 	wp_editor( '', 'replycontent', array( 'media_buttons' => false, 'tinymce' => false, 'quicktags' => $quicktags_settings ) );
@@ -473,27 +474,27 @@ function wp_review_comment_reply_filter( $output, $args ) {
 
 	<div id="edithead" style="display:none;">
 	<div class="inside">
-	<label for="author-name"><?php _e( 'Name' ) ?></label>
+	<label for="author-name"><?php _e( 'Name', 'wp-review' ) ?></label>
 	<input type="text" name="newcomment_author" size="50" value="" id="author-name" />
 	</div>
 
 	<div class="inside">
-	<label for="author-email"><?php _e('Email') ?></label>
+	<label for="author-email"><?php _e( 'Email', 'wp-review' ) ?></label>
 	<input type="text" name="newcomment_author_email" size="50" value="" id="author-email" />
 	</div>
 
 	<div class="inside">
-	<label for="author-url"><?php _e('URL') ?></label>
+	<label for="author-url"><?php _e( 'URL', 'wp-review' ) ?></label>
 	<input type="text" id="author-url" name="newcomment_author_url" class="code" size="103" value="" />
 	</div>
 	</div>
 
 	<p id="replysubmit" class="submit">
 	<a href="#comments-form" class="save button-primary alignright">
-	<span id="addbtn" style="display:none;"><?php _e('Add Comment'); ?></span>
-	<span id="savebtn" style="display:none;"><?php _e('Update Comment'); ?></span>
-	<span id="replybtn" style="display:none;"><?php _e('Submit Reply'); ?></span></a>
-	<a href="#comments-form" class="cancel button-secondary alignleft"><?php _e('Cancel'); ?></a>
+	<span id="addbtn" style="display:none;"><?php _e( 'Add Comment', 'wp-review' ); ?></span>
+	<span id="savebtn" style="display:none;"><?php _e( 'Update Comment', 'wp-review' ); ?></span>
+	<span id="replybtn" style="display:none;"><?php _e( 'Submit Reply', 'wp-review' ); ?></span></a>
+	<a href="#comments-form" class="cancel button-secondary alignleft"><?php _e( 'Cancel', 'wp-review' ); ?></a>
 	<span class="waiting spinner"></span>
 	<span class="error" style="display:none;"></span>
 	</p>
@@ -511,7 +512,7 @@ function wp_review_comment_reply_filter( $output, $args ) {
 		wp_nonce_field( 'unfiltered-html-comment', '_wp_unfiltered_html_comment', false );
 
 	wp_nonce_field( 'wp_review_comment_rating_update', 'wp_review_comment_rating_update', false );
-	
+
 	?>
 	</fieldset>
 	<?php if ( $table_row ) : ?>
@@ -546,12 +547,12 @@ function wp_review_comment_quick_edit_javascript() {
 			jQuery('#wp_review_comment_title', editRow).val( '' ).closest('.inside').hide();
             jQuery('#wp_review_comment_rating', editRow).val( '' ).closest('.inside').hide();
 		}
-        
-    }   
+
+    }
     </script>
    <?php
 }
-add_filter( 'comment_row_actions', 'wp_review_comment_quick_edit_action', 10, 2); 
+add_filter( 'comment_row_actions', 'wp_review_comment_quick_edit_action', 10, 2);
 function wp_review_comment_quick_edit_action($actions, $comment ) {
     global $post;
     //$actions['quickedit'] = '<a onclick="commentReply.close();if (typeof(wpreview_expandedOpen) == \'function\') wpreview_expandedOpen('.$comment->comment_ID.');commentReply.open( \''.$comment->comment_ID.'\',\''.$post->ID.'\',\'edit\' );return false;" class="vim-q" title="'.esc_attr__( 'Quick Edit' ).'" href="#">' . __( 'Quick&nbsp;Edit' ) . '</a>';
@@ -566,7 +567,7 @@ function wp_review_preprocess_comment( $commentdata ) {
 
 	// if ( ! empty( $_POST['wp_review_comment_rating'] ) && is_array( $_POST['wp_review_comment_rating'] ) ) {
 	//	$rating = filter_input( INPUT_POST, 'wp_review_comment_rating', FILTER_SANITIZE_NUMBER_INT, FILTER_REQUIRE_ARRAY );
-	//} else { 
+	//} else {
 		$rating = filter_input( INPUT_POST, 'wp-review-user-rating-val', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
 	//}
 
@@ -593,7 +594,7 @@ function wp_review_preprocess_comment( $commentdata ) {
 
 /**
  * Replace "Comment" with "Review" in submit field
- * 
+ *
  */
 add_filter( 'comment_form_submit_field', 'wp_review_change_submit_comment', 10, 2 );
 function wp_review_change_submit_comment( $field, $args ) {
@@ -610,15 +611,15 @@ function wp_review_change_submit_comment( $field, $args ) {
  */
 add_filter( 'wp_list_comments_args', 'wp_review_list_comments_args' );
 function wp_review_list_comments_args( $args ) {
-	if ( is_admin() ) 
+	if ( is_admin() )
 		return $args;
-	
+
 	global $post;
 	$review_through_comment = in_array( wp_review_get_user_rating_setup( $post->ID ), array( WP_REVIEW_REVIEW_COMMENT_ONLY, WP_REVIEW_REVIEW_ALLOW_BOTH ) );
 	if ( ! $review_through_comment ) {
 		return $args;
 	}
-	
+
 	if ( $args['type'] == 'comment' && apply_filters( 'wp_review_to_comment_type_list', true ) ) {
 		$args['type'] = 'all';
 	}
@@ -632,7 +633,7 @@ function wp_review_comment_rating_input( $args = array() ) {
 	$post_id = $post->ID;
 	$value = 0;
 	$comment_rating = true;
-	
+
 	$options = get_option('wp_review_options');
 	$custom_colors = get_post_meta( $post_id, 'wp_review_custom_colors', true );
 	$colors['color'] = get_post_meta( $post_id, 'wp_review_color', true );
@@ -667,13 +668,13 @@ function wp_review_comment_rating( $value, $comment_id = null, $args = array() )
 		$post_id = $post->id;
 	}
 	$type = wp_review_get_post_user_review_type( $post_id );
-	
+
 	if ( empty( $type ) )
 		return '';
-	
+
 	$options = get_option('wp_review_options');
 	$custom_colors = get_post_meta( $post_id, 'wp_review_custom_colors', true );
-	
+
 	$colors['color'] = get_post_meta( $post_id, 'wp_review_color', true );
 	if( empty($colors['color']) ) $colors['color'] = '#333333';
 	$colors['type']  = get_post_meta( $post_id, 'wp_review_type', true );

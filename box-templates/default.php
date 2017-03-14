@@ -99,19 +99,13 @@ if ( isset( $review['width'] ) && $review['width'] < 100 ) {
 				}
 			 ?>
 				<li>
+					<?php echo wp_review_rating( $item['wp_review_item_star'], $review['post_id'] ); ?>
 					<span><?php echo wp_kses_post( $item['wp_review_item_title'] ); ?><?php echo $value_text; ?></span>
-					<?php echo wp_review_rating( $item['wp_review_item_star'] ); ?>
 				</li>
 			<?php endforeach; ?>
 		</ul>
 	<?php endif; ?>
 	<?php if ( ! $review['hide_desc'] ) : ?>
-		<?php if ( $review['desc'] ) : ?>
-			<div class="review-desc">
-				<p class="review-summary-title"><strong><?php echo $review['desc_title']; ?></strong></p>
-				<?php echo do_shortcode( shortcode_unautop( wp_kses_post( wpautop( $review['desc'] ) ) ) ); ?>
-			</div>
-		<?php endif; ?>
 		<?php if ( ! empty( $review['total'] ) ) :
 			$total_text = $review['total'];
 			if ( $review['type'] != 'star' ) {
@@ -125,9 +119,16 @@ if ( isset( $review['width'] ) && $review['width'] < 100 ) {
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>
+		<?php if ( $review['desc'] ) : ?>
+			<div class="review-desc">
+				<p class="review-summary-title"><strong><?php echo $review['desc_title']; ?></strong></p>
+				<?php echo do_shortcode( shortcode_unautop( wp_kses_post( wpautop( $review['desc'] ) ) ) ); ?>
+			</div>
+		<?php endif; ?>
 	<?php endif; ?>
 	<?php if ( $review['user_review'] ) : ?>
 		<div class="user-review-area visitors-review-area">
+			<?php echo wp_review_user_rating( $review['post_id'] ); ?>
 			<div class="user-total-wrapper">
 				<span class="user-review-title"><?php _e( 'User Rating', 'wp-review' ); ?></span>
 				<span class="review-total-box">
@@ -141,13 +142,13 @@ if ( isset( $review['width'] ) && $review['width'] < 100 ) {
 					<small>(<span class="wp-review-user-rating-counter"><?php echo esc_html( $review['user_review_count'] ); ?></span> <?php echo _n( 'vote', 'votes', $review['user_review_count'], 'wp-review' ); ?>)</small>
 				</span>
 			</div>
-			<?php echo wp_review_user_rating( $review['post_id'] ); ?>
 		</div>
 	<?php endif; // $review['user_review'] ?>
 	<?php if ( $review['comments_review'] ) : ?>
 		<?php $hide_comments_total = get_post_meta( $post->ID, 'wp_review_hide_comments_total', true ); ?>
 		<?php if ( '1' !== $hide_comments_total ) : ?>
 		<div class="user-review-area comments-review-area">
+			<?php echo wp_review_user_comments_rating( $review['post_id'] ); ?>
 			<div class="user-total-wrapper">
 				<span class="user-review-title"><?php _e( 'Comments Rating', 'wp-review' ); ?></span>
 				<span class="review-total-box">
@@ -164,7 +165,6 @@ if ( isset( $review['width'] ) && $review['width'] < 100 ) {
 					<small>(<span class="wp-review-user-rating-counter"><?php echo esc_html( $comments_review_count ); ?></span> <?php echo _n( 'review', 'reviews', $comments_review_count, 'wp-review' ); ?>)</small>
 				</span>
 			</div>
-			<?php echo wp_review_user_comments_rating( $review['post_id'] ); ?>
 		</div>
 		<?php endif; // $review['comments_review'] ?>
 	<?php endif; // $review['comments_review'] ?>
