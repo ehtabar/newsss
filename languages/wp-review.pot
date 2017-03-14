@@ -1,0 +1,1091 @@
+# Copyright (C) 2016 WP Review Pro
+# This file is distributed under the same license as the WP Review Pro package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Review Pro 2.1.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-review-pro\n"
+"POT-Creation-Date: 2016-08-15 13:52:59+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/admin.php:35 admin/metaboxes.php:1392
+msgid "Select Image"
+msgstr ""
+
+#: admin/admin.php:36
+msgid "Insert Image"
+msgstr ""
+
+#: admin/admin.php:37 admin/metaboxes.php:1395
+msgid "Remove Image"
+msgstr ""
+
+#: admin/metaboxes.php:30 includes/comments.php:603
+msgid "Review"
+msgstr ""
+
+#: admin/metaboxes.php:39
+msgid "Review Item"
+msgstr ""
+
+#: admin/metaboxes.php:48
+msgid "Review Links"
+msgstr ""
+
+#: admin/metaboxes.php:57
+msgid "Review Description"
+msgstr ""
+
+#: admin/metaboxes.php:66
+msgid "User Reviews"
+msgstr ""
+
+#: admin/metaboxes.php:100
+msgid "Review Type"
+msgstr ""
+
+#: admin/metaboxes.php:102
+msgid "No Review"
+msgstr ""
+
+#: admin/metaboxes.php:111
+msgid "Review Heading"
+msgstr ""
+
+#: admin/metaboxes.php:116
+msgid "Reviewed Item Schema"
+msgstr ""
+
+#: admin/metaboxes.php:137
+msgid "Rating Schema"
+msgstr ""
+
+#: admin/metaboxes.php:139
+msgid "Author Review Rating"
+msgstr ""
+
+#: admin/metaboxes.php:140
+msgid "Visitors Aggregate Rating (if enabled)"
+msgstr ""
+
+#: admin/metaboxes.php:141
+msgid "Comments Reviews Aggregate Rating (if enabled)"
+msgstr ""
+
+#: admin/metaboxes.php:227
+msgid "Feature Name"
+msgstr ""
+
+#: admin/metaboxes.php:228
+msgid "Star (1-5)"
+msgstr ""
+
+#: admin/metaboxes.php:248 admin/metaboxes.php:259 admin/metaboxes.php:269
+#: admin/metaboxes.php:462 admin/metaboxes.php:474 admin/metaboxes.php:484
+#: admin/options.php:360 admin/options.php:373 admin/options.php:383
+#: admin/options.php:405 admin/options.php:415
+msgid "Delete"
+msgstr ""
+
+#: admin/metaboxes.php:278 admin/metaboxes.php:491
+msgid "Add another"
+msgstr ""
+
+#: admin/metaboxes.php:282
+msgid "Total"
+msgstr ""
+
+#: admin/metaboxes.php:288
+msgid "Custom Location"
+msgstr ""
+
+#: admin/metaboxes.php:292 admin/options.php:326
+msgid "Review Location"
+msgstr ""
+
+#: admin/metaboxes.php:294 admin/options.php:329
+msgid "After Content"
+msgstr ""
+
+#: admin/metaboxes.php:295 admin/options.php:330
+msgid "Before Content"
+msgstr ""
+
+#: admin/metaboxes.php:296 admin/options.php:331
+msgid "Custom (use shortcode)"
+msgstr ""
+
+#: admin/metaboxes.php:302
+msgid "Copy &amp; paste this shortcode in the content."
+msgstr ""
+
+#: admin/metaboxes.php:307
+msgid "Custom Colors"
+msgstr ""
+
+#: admin/metaboxes.php:312 admin/options.php:267
+msgid "Review Color"
+msgstr ""
+
+#: admin/metaboxes.php:317 admin/options.php:272
+msgid "Font Color"
+msgstr ""
+
+#: admin/metaboxes.php:322 admin/options.php:277
+msgid "Heading Background Color"
+msgstr ""
+
+#: admin/metaboxes.php:327 admin/options.php:282
+msgid "Background Color"
+msgstr ""
+
+#: admin/metaboxes.php:332 admin/options.php:287
+msgid "Border Color"
+msgstr ""
+
+#: admin/metaboxes.php:338
+msgid "Custom Width"
+msgstr ""
+
+#: admin/metaboxes.php:343 admin/options.php:294
+msgid "Review Box Width"
+msgstr ""
+
+#: admin/metaboxes.php:347 admin/options.php:298
+msgid "Align Left"
+msgstr ""
+
+#: admin/metaboxes.php:351 admin/options.php:302
+msgid "Align Right"
+msgstr ""
+
+#: admin/metaboxes.php:359
+msgid "Custom Author"
+msgstr ""
+
+#: admin/metaboxes.php:363
+msgid "Review Author"
+msgstr ""
+
+#: admin/metaboxes.php:370
+msgid "Display reviewed item schema data (if available)"
+msgstr ""
+
+#: admin/metaboxes.php:384 includes/functions.php:1358
+msgid "Summary"
+msgstr ""
+
+#: admin/metaboxes.php:407
+msgid "Hide Description &amp; Total Rating"
+msgstr ""
+
+#: admin/metaboxes.php:440
+msgid "Text"
+msgstr ""
+
+#: admin/metaboxes.php:441 admin/metaboxes.php:735 admin/metaboxes.php:813
+#: admin/metaboxes.php:842 admin/metaboxes.php:889 admin/metaboxes.php:944
+#: admin/metaboxes.php:987 admin/metaboxes.php:1016 admin/metaboxes.php:1170
+#: admin/metaboxes.php:1199 admin/metaboxes.php:1258 admin/metaboxes.php:1290
+#: admin/metaboxes.php:1319 includes/comments.php:486
+msgid "URL"
+msgstr ""
+
+#: admin/metaboxes.php:514 admin/options.php:426
+msgid "Disabled"
+msgstr ""
+
+#: admin/metaboxes.php:518 admin/options.php:429
+msgid "Visitor Rating Only"
+msgstr ""
+
+#: admin/metaboxes.php:522 admin/options.php:432
+msgid "Comment Rating Only"
+msgstr ""
+
+#: admin/metaboxes.php:526 admin/options.php:435
+msgid "Both"
+msgstr ""
+
+#: admin/metaboxes.php:529
+msgid "User Rating Type"
+msgstr ""
+
+#: admin/metaboxes.php:537
+msgid "Note: If you are changing user rating type and post already have user ratings, please edit or remove existing ratings if needed."
+msgstr ""
+
+#: admin/metaboxes.php:543
+msgid "Hide Comments Total Rating ( if \"Comment Rating Only\" or \"Both\" is checked )"
+msgstr ""
+
+#: admin/metaboxes.php:547
+msgid "Comment Rating Type"
+msgstr ""
+
+#: admin/metaboxes.php:710
+msgid "None"
+msgstr ""
+
+#: admin/metaboxes.php:713
+msgid "Book"
+msgstr ""
+
+#: admin/metaboxes.php:717
+msgid "Book Title"
+msgstr ""
+
+#: admin/metaboxes.php:723
+msgid "Book Description"
+msgstr ""
+
+#: admin/metaboxes.php:729
+msgid "Book Image"
+msgstr ""
+
+#: admin/metaboxes.php:741
+msgid "Book Author"
+msgstr ""
+
+#: admin/metaboxes.php:747
+msgid "Book Edition"
+msgstr ""
+
+#: admin/metaboxes.php:753
+msgid "Book Format"
+msgstr ""
+
+#: admin/metaboxes.php:766 admin/metaboxes.php:848 admin/metaboxes.php:958
+msgid "Date published"
+msgstr ""
+
+#: admin/metaboxes.php:772
+msgid "Illustrator"
+msgstr ""
+
+#: admin/metaboxes.php:778
+msgid "ISBN"
+msgstr ""
+
+#: admin/metaboxes.php:784
+msgid "Number Of Pages"
+msgstr ""
+
+#: admin/metaboxes.php:791
+msgid "Game"
+msgstr ""
+
+#: admin/metaboxes.php:795
+msgid "Game title"
+msgstr ""
+
+#: admin/metaboxes.php:801
+msgid "Game description"
+msgstr ""
+
+#: admin/metaboxes.php:807
+msgid "Game Image"
+msgstr ""
+
+#: admin/metaboxes.php:820
+msgid "Movie"
+msgstr ""
+
+#: admin/metaboxes.php:824
+msgid "Movie title"
+msgstr ""
+
+#: admin/metaboxes.php:830
+msgid "Movie description"
+msgstr ""
+
+#: admin/metaboxes.php:836
+msgid "Movie Image"
+msgstr ""
+
+#: admin/metaboxes.php:854
+msgid "Director(s)"
+msgstr ""
+
+#: admin/metaboxes.php:858
+msgid "Add one director per line"
+msgstr ""
+
+#: admin/metaboxes.php:862
+msgid "Actor(s)"
+msgstr ""
+
+#: admin/metaboxes.php:866
+msgid "Add one actor per line"
+msgstr ""
+
+#: admin/metaboxes.php:870 admin/metaboxes.php:913 admin/metaboxes.php:950
+msgid "Genre"
+msgstr ""
+
+#: admin/metaboxes.php:874 admin/metaboxes.php:917 admin/metaboxes.php:954
+msgid "Add one item per line"
+msgstr ""
+
+#: admin/metaboxes.php:879
+msgid "MusicRecording"
+msgstr ""
+
+#: admin/metaboxes.php:883
+msgid "Track name"
+msgstr ""
+
+#: admin/metaboxes.php:895 admin/metaboxes.php:932 admin/metaboxes.php:1069
+msgid "Author"
+msgstr ""
+
+#: admin/metaboxes.php:901
+msgid "Track Duration"
+msgstr ""
+
+#: admin/metaboxes.php:907
+msgid "Album name"
+msgstr ""
+
+#: admin/metaboxes.php:922
+msgid "Painting"
+msgstr ""
+
+#: admin/metaboxes.php:926 admin/metaboxes.php:1063 admin/metaboxes.php:1181
+#: admin/metaboxes.php:1272 admin/metaboxes.php:1301 includes/comments.php:157
+#: includes/comments.php:476
+msgid "Name"
+msgstr ""
+
+#: admin/metaboxes.php:938 admin/metaboxes.php:1081 admin/metaboxes.php:1193
+#: admin/metaboxes.php:1284 admin/metaboxes.php:1313
+msgid "Image"
+msgstr ""
+
+#: admin/metaboxes.php:965
+msgid "Place"
+msgstr ""
+
+#: admin/metaboxes.php:969
+msgid "Place Name"
+msgstr ""
+
+#: admin/metaboxes.php:975
+msgid "Place Description"
+msgstr ""
+
+#: admin/metaboxes.php:981
+msgid "Place Image"
+msgstr ""
+
+#: admin/metaboxes.php:994
+msgid "Product"
+msgstr ""
+
+#: admin/metaboxes.php:998
+msgid "Product Name"
+msgstr ""
+
+#: admin/metaboxes.php:1004
+msgid "Product Description"
+msgstr ""
+
+#: admin/metaboxes.php:1010
+msgid "Product Image"
+msgstr ""
+
+#: admin/metaboxes.php:1022 admin/metaboxes.php:1205 filter-list.php:41
+msgid "Price"
+msgstr ""
+
+#: admin/metaboxes.php:1030 admin/metaboxes.php:1213
+msgid "Currency"
+msgstr ""
+
+#: admin/metaboxes.php:1038
+msgid "Availability"
+msgstr ""
+
+#: admin/metaboxes.php:1059
+msgid "Recipe"
+msgstr ""
+
+#: admin/metaboxes.php:1075 admin/metaboxes.php:1187 admin/metaboxes.php:1278
+#: admin/metaboxes.php:1307
+msgid "Description"
+msgstr ""
+
+#: admin/metaboxes.php:1087
+msgid "Preperation time"
+msgstr ""
+
+#: admin/metaboxes.php:1090 admin/metaboxes.php:1097 admin/metaboxes.php:1104
+msgid "Format: 1H30M. H - Hours, M - Minutes"
+msgstr ""
+
+#: admin/metaboxes.php:1094
+msgid "Cook Time"
+msgstr ""
+
+#: admin/metaboxes.php:1101
+msgid "Total Time"
+msgstr ""
+
+#: admin/metaboxes.php:1108
+msgid "Type"
+msgstr ""
+
+#: admin/metaboxes.php:1111
+msgid "Type of dish, for example \"appetizer\", \"entree\", or \"dessert\""
+msgstr ""
+
+#: admin/metaboxes.php:1115
+msgid "Recipe Yield"
+msgstr ""
+
+#: admin/metaboxes.php:1118
+msgid "Quantity produced by the recipe, for example \"4 servings\""
+msgstr ""
+
+#: admin/metaboxes.php:1122
+msgid "Recipe Ingredients"
+msgstr ""
+
+#: admin/metaboxes.php:1126
+msgid "Recipe ingredients, add one item per line"
+msgstr ""
+
+#: admin/metaboxes.php:1130
+msgid "Recipe Instructions"
+msgstr ""
+
+#: admin/metaboxes.php:1133
+msgid "Steps to take"
+msgstr ""
+
+#: admin/metaboxes.php:1137
+msgid "Calories"
+msgstr ""
+
+#: admin/metaboxes.php:1140
+msgid "The number of calories"
+msgstr ""
+
+#: admin/metaboxes.php:1148
+msgid "Restaurant"
+msgstr ""
+
+#: admin/metaboxes.php:1152
+msgid "Restaurant Name"
+msgstr ""
+
+#: admin/metaboxes.php:1158
+msgid "Restaurant Description"
+msgstr ""
+
+#: admin/metaboxes.php:1164
+msgid "Restaurant Image"
+msgstr ""
+
+#: admin/metaboxes.php:1177
+msgid "SoftwareApplication"
+msgstr ""
+
+#: admin/metaboxes.php:1221
+msgid "Operating System"
+msgstr ""
+
+#: admin/metaboxes.php:1224
+msgid "For example, \"Windows 7\", \"OSX 10.6\", \"Android 1.6\""
+msgstr ""
+
+#: admin/metaboxes.php:1228
+msgid "Application Category"
+msgstr ""
+
+#: admin/metaboxes.php:1231
+msgid "For example, \"Game\", \"Multimedia\""
+msgstr ""
+
+#: admin/metaboxes.php:1236
+msgid "Store"
+msgstr ""
+
+#: admin/metaboxes.php:1240
+msgid "Store Name"
+msgstr ""
+
+#: admin/metaboxes.php:1246
+msgid "Store Description"
+msgstr ""
+
+#: admin/metaboxes.php:1252
+msgid "Store Image"
+msgstr ""
+
+#: admin/metaboxes.php:1265
+msgid "Thing (Default)"
+msgstr ""
+
+#: admin/metaboxes.php:1268
+msgid "TVSeries"
+msgstr ""
+
+#: admin/metaboxes.php:1297
+msgid "WebSite"
+msgstr ""
+
+#: admin/options.php:34 includes/functions.php:1026 includes/widget.php:77
+msgid "Star"
+msgstr ""
+
+#: admin/options.php:34 includes/functions.php:1036 includes/widget.php:78
+msgid "Point"
+msgstr ""
+
+#: admin/options.php:34 includes/functions.php:1046 includes/widget.php:79
+msgid "Percentage"
+msgstr ""
+
+#: admin/options.php:34 includes/functions.php:1057
+msgid "Circle"
+msgstr ""
+
+#: admin/options.php:83
+msgid "WP Review Pro Settings"
+msgstr ""
+
+#: admin/options.php:163
+msgid "General"
+msgstr ""
+
+#: admin/options.php:164 admin/options.php:261
+msgid "Styling"
+msgstr ""
+
+#: admin/options.php:165 admin/options.php:319
+msgid "Defaults"
+msgstr ""
+
+#: admin/options.php:167
+msgid "Migrate Ratings"
+msgstr ""
+
+#: admin/options.php:172
+msgid "General Settings"
+msgstr ""
+
+#: admin/options.php:175
+msgid "There is a filter set for the review location that may modify the options below."
+msgstr ""
+
+#: admin/options.php:180
+msgid "The current theme provides default settings for the plugin."
+msgstr ""
+
+#: admin/options.php:182
+msgid "Set to theme defaults"
+msgstr ""
+
+#: admin/options.php:188
+msgid "Comments template"
+msgstr ""
+
+#: admin/options.php:193
+msgid "Theme"
+msgstr ""
+
+#: admin/options.php:194
+msgid "Use theme comments template. Might need customization of comments.php"
+msgstr ""
+
+#: admin/options.php:199
+msgid "WP Review"
+msgstr ""
+
+#: admin/options.php:200
+msgid "Use WP Review comments template. Better chances for out of the box integration."
+msgstr ""
+
+#: admin/options.php:205
+msgid "Comment form integration"
+msgstr ""
+
+#: admin/options.php:210
+msgid "Replace"
+msgstr ""
+
+#: admin/options.php:211
+msgid "Replace form fields."
+msgstr ""
+
+#: admin/options.php:216
+msgid "Extend"
+msgstr ""
+
+#: admin/options.php:217
+msgid "Add new fields without modifying the default fields."
+msgstr ""
+
+#: admin/options.php:222
+msgid "Restrict rating to registered users only"
+msgstr ""
+
+#: admin/options.php:227
+msgid "Require a rating when commenting"
+msgstr ""
+
+#: admin/options.php:232
+msgid "Allow comment feedback (helpful/unhelpful)"
+msgstr ""
+
+#: admin/options.php:237
+msgid "Add total rating to thumbnails"
+msgstr ""
+
+#: admin/options.php:243
+msgid "Rating to show: "
+msgstr ""
+
+#: admin/options.php:245
+msgid "Author total"
+msgstr ""
+
+#: admin/options.php:246
+msgid "Visitors total"
+msgstr ""
+
+#: admin/options.php:247
+msgid "Comments total"
+msgstr ""
+
+#: admin/options.php:251
+msgid "Registered image sizes: "
+msgstr ""
+
+#: admin/options.php:263
+msgid "There is a filter set for the review colors that may modify the options below."
+msgstr ""
+
+#: admin/options.php:308
+msgid "Comment Rating Color"
+msgstr ""
+
+#: admin/options.php:310
+msgid "Use different color for ratings in comments"
+msgstr ""
+
+#: admin/options.php:335
+msgid "Copy &amp; paste this shortcode in the post content."
+msgstr ""
+
+#: admin/options.php:340
+msgid "Review Schema"
+msgstr ""
+
+#: admin/options.php:350
+msgid "Features"
+msgstr ""
+
+#: admin/options.php:388
+msgid "Default features are set by a filter function. Remove it to change."
+msgstr ""
+
+#: admin/options.php:390
+msgid "Add default feature"
+msgstr ""
+
+#: admin/options.php:395
+msgid "Links"
+msgstr ""
+
+#: admin/options.php:419
+msgid "Add default link"
+msgstr ""
+
+#: admin/options.php:423
+msgid "User Ratings"
+msgstr ""
+
+#: admin/options.php:440
+msgid "Force Enable User Ratings"
+msgstr ""
+
+#: admin/options.php:442
+msgid "Enable user ratings on all posts, pages and custom post types where it is not disabled explicitly."
+msgstr ""
+
+#: admin/options.php:456
+msgid "Here you can import your existing user ratings from WP Review 1.x and WP Review Pro 1.x."
+msgstr ""
+
+#: admin/options.php:457
+msgid "%s ratings left to import."
+msgstr ""
+
+#: admin/options.php:458
+msgid "Start import"
+msgstr ""
+
+#: admin/options.php:461
+msgid "Ratings have already been migrated."
+msgstr ""
+
+#: admin/options.php:469
+msgid "Save Changes"
+msgstr ""
+
+#: admin/options.php:480
+msgid "Settings"
+msgstr ""
+
+#: box-templates/default.php:81
+msgid "More..."
+msgstr ""
+
+#: box-templates/default.php:132
+msgid "User Rating"
+msgstr ""
+
+#: box-templates/default.php:141
+msgid "vote"
+msgid_plural "votes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: box-templates/default.php:152
+msgid "Comments Rating"
+msgstr ""
+
+#: box-templates/default.php:164
+msgid "review"
+msgid_plural "reviews"
+msgstr[0] ""
+msgstr[1] ""
+
+#: compat/comments.php:10
+msgid "Please do not load this page directly. Thanks!"
+msgstr ""
+
+#: compat/comments.php:13
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: compat/comments.php:21
+msgid "No Responses"
+msgstr ""
+
+#: compat/comments.php:21
+msgid "One Response"
+msgstr ""
+
+#: compat/comments.php:21
+msgid "% Comments"
+msgstr ""
+
+#: compat/comments.php:48
+msgid "Leave a Reply"
+msgstr ""
+
+#: compat/comments.php:51
+msgid "Post Comment"
+msgstr ""
+
+#: compat/comments.php:52
+msgid "Comment*"
+msgstr ""
+
+#: compat/comments.php:56
+msgid "Name*"
+msgstr ""
+
+#: compat/comments.php:57
+msgid "Email*"
+msgstr ""
+
+#: compat/comments.php:58 includes/comments.php:163
+msgid "Website"
+msgstr ""
+
+#: filter-list.php:34
+msgid "Enable Reviews"
+msgstr ""
+
+#: filter-list.php:41
+msgid "Audio"
+msgstr ""
+
+#: filter-list.php:41
+msgid "Visual"
+msgstr ""
+
+#: filter-list.php:41
+msgid "UX"
+msgstr ""
+
+#: filter-list.php:139
+msgid "10 Stars"
+msgstr ""
+
+#: filter-list.php:142 includes/functions.php:965 includes/functions.php:1029
+msgid "%s Stars"
+msgstr ""
+
+#: filter-list.php:143 includes/functions.php:1030
+msgid "%s Star"
+msgstr ""
+
+#: includes/comments.php:75 includes/comments.php:95
+msgid "( Edit )"
+msgstr ""
+
+#: includes/comments.php:79 includes/comments.php:99
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: includes/comments.php:151 includes/comments.php:208
+#: includes/comments.php:250 includes/comments.php:455
+msgid "Review Title"
+msgstr ""
+
+#: includes/comments.php:152 includes/comments.php:217
+#: includes/comments.php:253 includes/comments.php:460
+#: includes/functions.php:1585
+msgid "Rating"
+msgstr ""
+
+#: includes/comments.php:152 includes/comments.php:217
+msgid "Rating *"
+msgstr ""
+
+#: includes/comments.php:160 includes/comments.php:481
+msgid "Email"
+msgstr ""
+
+#: includes/comments.php:183
+msgid "Review Text*"
+msgstr ""
+
+#: includes/comments.php:236
+msgid "WP Review Rating (%s)"
+msgstr ""
+
+#: includes/comments.php:448
+msgid "Edit Comment"
+msgstr ""
+
+#: includes/comments.php:449
+msgid "Reply to Comment"
+msgstr ""
+
+#: includes/comments.php:450
+msgid "Add new Comment"
+msgstr ""
+
+#: includes/comments.php:467 includes/comments.php:603
+msgid "Comment"
+msgstr ""
+
+#: includes/comments.php:493
+msgid "Add Comment"
+msgstr ""
+
+#: includes/comments.php:494
+msgid "Update Comment"
+msgstr ""
+
+#: includes/comments.php:495
+msgid "Submit Reply"
+msgstr ""
+
+#: includes/comments.php:496
+msgid "Cancel"
+msgstr ""
+
+#: includes/comments.php:558
+msgid "Edit this item inline"
+msgstr ""
+
+#: includes/comments.php:558
+msgid "Quick Edit"
+msgstr ""
+
+#: includes/comments.php:588
+msgid "A rating is required! Hit the back button to add your rating."
+msgstr ""
+
+#: includes/functions.php:519 includes/functions.php:589
+#: includes/functions.php:965
+msgid "Visitor Rating: %s"
+msgstr ""
+
+#: includes/functions.php:613
+msgid "Invalid comment ID."
+msgstr ""
+
+#: includes/functions.php:633
+msgid "You already gave feedback."
+msgstr ""
+
+#: includes/functions.php:692
+msgid "Comment Reviews"
+msgstr ""
+
+#: includes/functions.php:693
+msgid "Visitor Reviews"
+msgstr ""
+
+#: includes/functions.php:1039 includes/functions.php:1040
+msgid "%s/10"
+msgstr ""
+
+#: includes/functions.php:1049 includes/functions.php:1050
+msgid "%s%%"
+msgstr ""
+
+#: includes/functions.php:1060 includes/functions.php:1061
+msgid "%s"
+msgstr ""
+
+#: includes/functions.php:1594
+msgid "No Rating"
+msgstr ""
+
+#: includes/functions.php:1637
+msgid "Thank you for updating WP Review Pro. Your existing user ratings will show up after importing them in %s."
+msgstr ""
+
+#: includes/functions.php:1637
+msgid "Settings &gt; WP Review Pro &gt; Migrate Ratings"
+msgstr ""
+
+#: includes/widget.php:13
+msgid "Display Reviews in tabbed format."
+msgstr ""
+
+#: includes/widget.php:15
+msgid "WP Review Widget"
+msgstr ""
+
+#: includes/widget.php:36 includes/widget.php:54 includes/widget.php:138
+#: includes/widget.php:158
+msgid "Top Rated"
+msgstr ""
+
+#: includes/widget.php:36 includes/widget.php:58 includes/widget.php:142
+#: includes/widget.php:162
+msgid "Recent"
+msgstr ""
+
+#: includes/widget.php:36 includes/widget.php:62 includes/widget.php:146
+#: includes/widget.php:166
+msgid "Most Voted"
+msgstr ""
+
+#: includes/widget.php:36
+msgid "Editor's choice"
+msgstr ""
+
+#: includes/widget.php:49
+msgid "Select Tabs"
+msgstr ""
+
+#: includes/widget.php:66 includes/widget.php:150 includes/widget.php:170
+msgid "Custom"
+msgstr ""
+
+#: includes/widget.php:74
+msgid "Review type:"
+msgstr ""
+
+#: includes/widget.php:76
+msgid "Any"
+msgstr ""
+
+#: includes/widget.php:86
+msgid "Allow pagination"
+msgstr ""
+
+#: includes/widget.php:91
+msgid "Number of reviews to show:"
+msgstr ""
+
+#: includes/widget.php:98
+msgid "Title length (words):"
+msgstr ""
+
+#: includes/widget.php:107
+msgid "Thumbnail size:"
+msgstr ""
+
+#: includes/widget.php:109
+msgid "Small"
+msgstr ""
+
+#: includes/widget.php:110
+msgid "Large"
+msgstr ""
+
+#: includes/widget.php:117
+msgid "Show date"
+msgstr ""
+
+#: includes/widget.php:122
+msgid "Reviews on Custom tab:"
+msgstr ""
+
+#: includes/widget.php:132
+msgid "Tab Titles"
+msgstr ""
+
+#: includes/widget.php:132
+msgid "Tab Order"
+msgstr ""
+
+#: includes/widget.php:471
+msgid "&laquo; Previous"
+msgstr ""
+
+#: includes/widget.php:474
+msgid "Next &raquo;"
+msgstr ""
+
+#: rating-types/circle-input.php:39
+msgid "Send Rating"
+msgstr ""
+
+#: rating-types/percentage-input.php:25 rating-types/point-input.php:23
+#: rating-types/star-input.php:23
+msgid "Sending"
+msgstr ""
+
+#: rating-types/percentage-input.php:29 rating-types/point-input.php:27
+msgid "Your rating: %s"
+msgstr ""
+
+#: wp-review.php:39
+msgid "Please deactivate WP Review plugin first to use the Premium features!"
+msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "WP Review Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://mythemeshop.com/plugins/wp-review-pro/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Create reviews! Choose from Stars, Percentages, Circles or Points for review scores. Supports Retina Display, WPMU and Unlimited Color Schemes."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "MyThemesShop"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://mythemeshop.com/"
+msgstr ""
