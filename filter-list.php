@@ -145,3 +145,12 @@ function wp_review_register_additional_rating_types() {
     'output_template' => WP_REVIEW_DIR . 'rating-types/star10-output.php', // Replace with path to output template
   ) );
 }
+
+/**
+ * Show post title as review heading when the review heading field is empty
+ */
+add_filter( 'wp_review_item_title_fallback', 'wp_review_post_title_fallback', 10, 1 );
+function wp_review_post_title_fallback( $paths  ) {
+  return '<h5 class="review-title">'.get_the_title().'</h5>';
+}
+

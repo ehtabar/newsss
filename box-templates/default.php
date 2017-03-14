@@ -60,7 +60,7 @@ if ( isset( $review['width'] ) && $review['width'] < 100 ) {
 ?>
 <div id="review" class="review-wrapper wp-review-<?php echo $review['post_id']; ?> wp-review-<?php echo $review['type']; ?>-type delay-animation <?php echo join(' ', $classes); ?>">
 	<?php if ( empty( $review['heading'] ) ) : ?>
-		<h5 class="review-title"><?php echo esc_attr( get_the_title( $review['post_id'] ) ); ?></h5>
+		<?php echo apply_filters( 'wp_review_item_title_fallback', '' ); ?>
 	<?php else: ?>
 		<h5 class="review-title"><?php echo esc_html( $review['heading'] ); ?></h5>
 	<?php endif; ?>

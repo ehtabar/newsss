@@ -59,9 +59,14 @@
 }
 .rtl .review-desc { float: right }
 .review-desc p:last-child { margin-bottom: 0 }
+.review-result-wrapper {
+    font-size: 0;
+    height: 20px;
+}
 .review-result-wrapper i {
     font-style: normal;
     font-size: 16px;
+    padding: 0 1px;
 }
 .reviewed-item {
     display: inline-block;
@@ -576,18 +581,19 @@ form.wp-review-comment-form > div, #commentform.wp-review-comment-form > div {
 @media screen and (max-width:860px) { 
   .review-desc { width: 66% }
 }
-@media screen and (max-width:470px) { 
+@media screen and (max-width:470px) {
   .review-desc {
       padding: 4%;
       width: 100%;
   }
   .review-total-wrapper {
       width: 100%;
-      margin-right: 0;
+      margin-right: 19px;
+      text-align: right;
   }
   .review-total-wrapper span.review-total-box {
       padding: 10px 0 20px;
-      text-align: left;
+      text-align: right;
       padding-left: 10px;
   }
   .rtl .review-total-wrapper span.review-total-box {

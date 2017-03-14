@@ -46,7 +46,7 @@ jQuery(document).ready(function($) {
 	      }
 	    }).on('wpr_disappear', function(event) {
 	      	var $this = $(this);
-	    	$this.addClass('delay-animation'); // rewind animation
+	    	//$this.addClass('delay-animation'); // rewind animation
 	    });
 	    $(window).load(function() {
 	    	$.wpr_force_appear(); // if it's right there on window.load
