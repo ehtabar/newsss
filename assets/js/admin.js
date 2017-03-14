@@ -16,14 +16,14 @@ jQuery(document).ready(function($) {
 		review_total: function(){
 				var sum   = 0,
 					value = 0,
-					input = $('#wp-review-metabox-item .review-star').length;
+					input = $('.review-star').length;
 					
-				$('#wp-review-metabox-item .review-star').each(function () {
+				$('.review-star').each(function () {
 					value = Number($(this).val());
 					if (!isNaN(value)) sum += value / input;
 				});
 				
-				$('#wp-review-metabox-item .wp-review-total').val( sum.toFixed( current_rating_decimals ) );
+				$('.wp-review-total').val( sum.toFixed( current_rating_decimals ) );
 				
 				$.validate_review_value( current_rating_max );
 		},
@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
 		row.removeClass('empty-row screen-reader-text');
 		row.insertBefore($target.find('tbody>tr:last'));
 		row.find(".focus-on-add").focus();
-		//$.review_total();
+		$.review_total();
 	});
 
 	$('.remove-row').on('click', function(e) {
@@ -115,7 +115,7 @@ jQuery(document).ready(function($) {
 		current_rating_max = max;
 		current_rating_decimals = decimals;
 		$.validate_review_value( max );
-		//$.review_total();
+		$.review_total();
 
 	}).change();
 
@@ -201,7 +201,7 @@ jQuery(document).ready(function($) {
 
 	
 	
-	//$.review_total();
+	$.review_total();
 	//$.validate_review_value();
 	//$('.review-star').trigger('change');
 
@@ -262,49 +262,14 @@ jQuery(document).ready(function($) {
 		$this.addClass('nav-tab-active').siblings().removeClass('nav-tab-active');
 		$('#wp-review-settings-tab-contents').find('.settings-tab-'+$this.data('tab')).show().siblings().hide();
 	});*/
-	var setCookie = function(name, value, days) {
-	    var expires;
-	    if (days) {
-	        var date = new Date();
-	        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-	        expires = "; expires=" + date.toGMTString();
-	    }
-	    else {
-	        expires = "";
-	    }
-	    document.cookie = name + "=" + value + expires + "; path=/";
-	}
-
-	var getCookie = function(c_name) {
-	    if (document.cookie.length > 0) {
-	        c_start = document.cookie.indexOf(c_name + "=");
-	        if (c_start != -1) {
-	            c_start = c_start + c_name.length + 1;
-	            c_end = document.cookie.indexOf(";", c_start);
-	            if (c_end == -1) {
-	                c_end = document.cookie.length;
-	            }
-	            return unescape(document.cookie.substring(c_start, c_end));
-	        }
-	    }
-	    return "";
-	}
 	var hash = window.location.hash.substr(1);
 	if ($('#wp-review-settings-tab-contents').find('.settings-tab-'+hash).length) {
 		$('.wrap.wp-review .nav-tab-wrapper .nav-tab').filter('[data-tab='+hash+']').addClass('nav-tab-active').siblings().removeClass('nav-tab-active');
 		$('#wp-review-settings-tab-contents').find('.settings-tab-'+hash).show().siblings().hide();
-	} else {
-		// Check cookie
-		var last_tab = getCookie('wp_review_settings_last_tab');
-		if (last_tab && $('#wp-review-settings-tab-contents').find('.settings-tab-'+last_tab).length) {
-			$('.wrap.wp-review .nav-tab-wrapper .nav-tab').filter('[data-tab='+last_tab+']').addClass('nav-tab-active').siblings().removeClass('nav-tab-active');
-			$('#wp-review-settings-tab-contents').find('.settings-tab-'+last_tab).show().siblings().hide();
-		}
 	}
 	$(window).on('hashchange', function() {
 		var hash = window.location.hash.substr(1);
 		if ($('#wp-review-settings-tab-contents').find('.settings-tab-'+hash).length) {
-			setCookie('wp_review_settings_last_tab', hash);
 			$('.wrap.wp-review .nav-tab-wrapper .nav-tab').filter('[data-tab='+hash+']').addClass('nav-tab-active').siblings().removeClass('nav-tab-active');
 			$('#wp-review-settings-tab-contents').find('.settings-tab-'+hash).show().siblings().hide();
 		}
