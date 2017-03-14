@@ -9,50 +9,14 @@ defined( 'ABSPATH' ) or	die( 'Cheatin&#8217; uh?' );
  * @since 1.3.5 Redo the function
  * @since 1.0
  */
-function rocket_clean_exclude_file( $file ) {
+function rocket_clean_exclude_file( $file )
+{
 	if ( ! $file ) {
 		return false;
 	}
 
 	$path = parse_url( $file, PHP_URL_PATH );
     return $path;
-}
-
-/**
- * Used with array_filter to remove files without .css extension
- *
- * @since 1.0
- */
-function rocket_sanitize_css( $file ) {
-	$file = preg_replace( '#\?.*$#', '', $file );
-	$ext  = strtolower( pathinfo( $file, PATHINFO_EXTENSION ) );
-	return ( 'css' === $ext || 'php' === $ext ) ? trim( $file ) : false;
-}
-
-/**
- * Used with array_filter to remove files without .js extension
- *
- * @since 1.0
- */
-function rocket_sanitize_js( $file ) {
-	$file = preg_replace( '#\?.*$#', '', $file );
-	$ext  = strtolower( pathinfo( $file, PATHINFO_EXTENSION ) );
-	return ( 'js' === $ext || 'php' === $ext ) ? trim( $file ) : false;
-}
-
-/**
- * Used with array_filter to remove files without .xml extension
- *
- * @since 2.8
- * @author Remy Perona
- *
- * @param string $file filename
- * @return string|boolean filename or false if not xml
- */
-function rocket_sanitize_xml( $file ) {
-	$file = preg_replace( '#\?.*$#', '', $file );
-	$ext  = strtolower( pathinfo( $file, PATHINFO_EXTENSION ) );
-	return ( 'xml' === $ext ) ? trim( $file ) : false;
 }
 
 /**
@@ -64,7 +28,8 @@ function rocket_sanitize_xml( $file ) {
  * @param bool 	 $no_dots (default: false)
  * @return string $url The URL without protocol
  */
-function rocket_remove_url_protocol( $url, $no_dots=false ) {
+function rocket_remove_url_protocol( $url, $no_dots=false )
+{
 	$url = str_replace( array( 'http://', 'https://' ) , '', $url );
 
 	/** This filter is documented in inc/front/htaccess.php */
@@ -84,63 +49,9 @@ function rocket_remove_url_protocol( $url, $no_dots=false ) {
  */
 function rocket_add_url_protocol( $url ) {
 	if ( strpos( $url, 'http://' ) === false && strpos( $url, 'https://' ) === false ) {
-    	if ( substr( $url, 0, 2 ) !== '//' ) {
-        	$url = '//' . $url;
-    	}
-		$url = set_url_scheme( $url );
+		$url = 'http://' . ltrim( $url, '//' );
 	}
 	return $url;
-}
-
-/**
- * Set the scheme for a internal URL
- *
- * @since 2.6
- *
- * @param 	string $url Absolute url that includes a scheme
- * @return 	string $url URL with a scheme.
- */
-function rocket_set_internal_url_scheme( $url ) {
-	$tmp_url = set_url_scheme( $url );
-
-    if( parse_url( $tmp_url, PHP_URL_HOST ) == parse_url( home_url(), PHP_URL_HOST ) ) {
-            $url = $tmp_url;
-    }
-
-    return $url;
-}
-
-/**
- * Get the domain of an URL without subdomain
- * (ex: rocket_get_domain( 'http://www.geekpress.fr' ) return geekpress.fr
- *
- * @source : http://stackoverflow.com/a/15498686
- * @since 2.7.3 undeprecated & updated
- * @since 1.0
- *
- * @param $url URL to parse
- * @return string|bool Domain or false
- */
-function rocket_get_domain( $url ) {
-    // Add URL protocol if the $url doesn't have one to prevent issue with parse_url
-    $url = rocket_add_url_protocol( trim( $url ) );
-
-    $url_array = parse_url( $url );
-    $host = $url_array['host'];
-    /**
-     * Filters the tld max range for edge cases
-     *
-     * @since 2.7.3
-     *
-     * @param string Max range number
-     */
-    $match = '/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,' . apply_filters( 'rocket_get_domain_preg', '6' ) . '})$/i';
-
-	if ( preg_match( $match, $host, $regs ) ) {
-        return $regs['domain'];
-	}
-
-	return false;
 }
 
 /**
@@ -152,13 +63,14 @@ function rocket_get_domain( $url ) {
  * @param string $url The URL to parse
  * @return array Components of an URL
  */
-function get_rocket_parse_url( $url ) {
+function get_rocket_parse_url( $url )
+{
 	if ( ! is_string( $url ) ) {
 		return;
 	}
 
-	$url    = wp_parse_url( $url );
-	$host   = isset( $url['host'] ) ? strtolower( $url['host'] ) : '';
+	$url    = parse_url( $url );
+	$host   = isset( $url['host'] ) ? $url['host'] : '';
 	$path   = isset( $url['path'] ) ? $url['path'] : '';
 	$scheme = isset( $url['scheme'] ) ? $url['scheme'] : '';
 	$query  = isset( $url['query'] ) ? $url['query'] : '';
@@ -174,36 +86,216 @@ function get_rocket_parse_url( $url ) {
 }
 
 /**
- * Returns paths used for cache busting
+ * Get CNAMES hosts
  *
- * @since 2.9
- * @author Remy Perona
+ * @since 2.3
  *
- * @param string $filename name of the cache busting file
- * @param string $extension file extension
- * @return array Array of paths used for cache busting
+ * @param string $zones CNAMES zones
+ * @return array $hosts CNAMES hosts
  */
-function rocket_get_cache_busting_paths( $filename, $extension ) {
-    $blog_id                = get_current_blog_id();
-    $cache_busting_path     = WP_ROCKET_CACHE_BUSTING_PATH . $blog_id . '/';
-    $filename				= rtrim( str_replace( array( '/', ' ', '%20' ), '-', $filename ) );
-    $cache_busting_filepath = $cache_busting_path . $filename;
-    $cache_busting_url      = get_rocket_cdn_url( WP_ROCKET_CACHE_BUSTING_URL . $blog_id . '/' . $filename, array( 'all', 'css_and_js', $extension ) );
+function get_rocket_cnames_host( $zones = array( 'all' ) ) {
+	$hosts = array();
 
-	switch ( $extension ) {
-		case 'css':
-			/** This filter is documented in inc/functions/minify.php */
-			$cache_busting_url = apply_filters( 'rocket_css_url', $cache_busting_url );
-			break;
-		case 'js':
-			/** This filter is documented in inc/functions/minify.php */
-			$cache_busting_url = apply_filters( 'rocket_js_url', $cache_busting_url );
-			break;
+	if ( $cnames = get_rocket_cdn_cnames( $zones ) ) {
+		foreach ( $cnames as $cname ) {
+			$cname = rocket_add_url_protocol( $cname );
+			$hosts[] = parse_url( $cname, PHP_URL_HOST );
+		}
 	}
 
-    return array(
-    	'bustingpath' => $cache_busting_path,
-    	'filepath'    => $cache_busting_filepath,
-    	'url'         => $cache_busting_url
-    );
+	return $hosts;
+}
+
+/*
+ * Get an URL with one of CNAMES added in options
+ *
+ * @since 2.1
+ *
+ * @param string $url The URL to parse
+ * @param array  $zone (default: array( 'all' ))
+ * @return string $url The URL with one of CNAMES
+ */
+function get_rocket_cdn_url( $url, $zone = array( 'all' ) )
+{
+	$cnames = get_rocket_cdn_cnames( $zone );
+
+	if ( ( defined( 'DONOTCDN' ) && DONOTCDN ) || (int) get_rocket_option('cdn') == 0 || empty( $cnames ) || ! is_rocket_cdn_on_ssl() || is_rocket_post_excluded_option( 'cdn' ) ) {
+		return $url;
+	}
+
+	list( $host, $path, $scheme, $query ) = get_rocket_parse_url( $url );
+	$query = ! empty( $query ) ? '?' . $query : '';
+
+	// Exclude rejected files from CDN
+	$rejected_files = get_rocket_cdn_reject_files();
+	if( ! empty( $rejected_files ) && preg_match( '#(' . $rejected_files . ')#', $path ) ) {
+		return $url;
+	}
+
+	if ( empty( $scheme ) ) {
+		$home = rocket_remove_url_protocol( home_url() );
+
+		// Check if URL is external
+		if ( strpos( $path, $home ) === false ) {
+			return $url;
+		} else {
+			$path = str_replace( $home, '', ltrim( $path, '//' ) );
+		}
+	}
+	$url = rtrim( $cnames[(abs(crc32($path))%count($cnames))], '/' ) . '/' . ltrim( $path, '/' ) . $query;
+	$url = rocket_add_url_protocol( $url );
+	return $url;
+}
+
+/*
+ * Wrapper of get_rocket_cdn_url() and print result
+ *
+ * @since 2.1
+ */
+function rocket_cdn_url( $url, $zone = array( 'all' ) )
+{
+	echo get_rocket_cdn_url( $url, $zone );
+}
+
+/**
+ * Get tag of a group of files or JS minified CSS
+ *
+ * @since 2.1
+ *
+ * @param array  $files List of files to minify (CSS or JS)
+ * @param bool   $force_pretty_url (default: true)
+ * @param string $pretty_filename (default: null) The new filename if $force_pretty_url set to true
+ * @return string $tags
+ */
+function get_rocket_minify_files( $files, $force_pretty_url = true, $pretty_filename = null )
+{
+	// Get the internal CSS Files
+	// To avoid conflicts with file URLs are too long for browsers,
+	// cut into several parts concatenated files
+	$tags 		= '';
+	$data_attr  = 'data-minify="1"';
+	$urls 		= array( 0 => '' );
+	$bubble     = is_child_theme() ? 'bubbleCssImports=1&' : '';
+	$base_url 	= WP_ROCKET_URL . 'min/?' . $bubble . 'f=';
+	$files  	= is_array( $files ) ? $files : (array) $files;
+
+	if ( count( $files ) ) {
+
+		$i=0;
+		foreach ( $files as $file ) {
+
+			$file = parse_url( $file, PHP_URL_PATH );
+
+			// Replace "//" by "/" because it cause an issue with Google Code Minify!
+			$file = str_replace( '//' , '/', $file );
+
+			/**
+			 * Filter the total number of files generated by the minification
+			 *
+			 * @since 2.1
+			 *
+			 * @param string The maximum number of characters in a URL
+			 * @param string The file's extension
+			*/
+			$filename_length = apply_filters( 'rocket_minify_filename_length', 255, pathinfo( $file, PATHINFO_EXTENSION ) );
+
+			// +1 : we count the extra comma
+			if ( strlen( $urls[$i] . $base_url . $file )+1>=$filename_length ) {
+				$i++;
+			}
+
+			/**
+			 * Filter file to add in minification process
+			 *
+			 * @since 2.4
+			 *
+			 * @param string $file The file path
+			*/
+			$file = apply_filters( 'rocket_pre_minify_path', $file );
+
+			$urls[$i] .= $file . ',';
+
+		}
+
+		foreach ( $urls as $url ) {
+
+			$url = $base_url . rtrim( $url, ',' );
+			$ext = pathinfo( $url, PATHINFO_EXTENSION );
+
+			if ( $force_pretty_url && ( defined( 'SCRIPT_DEBUG' ) && !SCRIPT_DEBUG ) ) {
+
+				/**
+				 * Filter the minify URL
+				 *
+				 * If true returns,
+				 * the minify URL like example.com/wp-content/plugins/wp-rocket/min/?f=...
+				 *
+				 * @since 2.1
+				 *
+				 * @param bool
+				*/
+				if ( ! apply_filters( 'rocket_minify_debug', false ) ) {
+
+					$blog_id = get_current_blog_id();
+					$pretty_url = !$pretty_filename ? WP_ROCKET_MINIFY_CACHE_URL . $blog_id . '/' . md5( $url . get_rocket_option( 'minify_' . $ext . '_key', create_rocket_uniqid() ) ) . '.' . $ext : WP_ROCKET_MINIFY_CACHE_URL . $blog_id . '/' . $pretty_filename . '.' . $ext;
+
+					/**
+					 * Filter the pretty minify URL
+					 *
+					 * @since 2.1
+					 *
+					 * @param string $pretty_url
+					 * @param string $pretty_filename
+					*/
+					$pretty_url = apply_filters( 'rocket_minify_pretty_url', $pretty_url, $pretty_filename );
+
+					$url = rocket_fetch_and_cache_minify( $url, $pretty_url ) ? $pretty_url : $url;
+
+				}
+
+			}
+
+			// If CSS & JS use a CDN
+			$url = get_rocket_cdn_url( $url, array( 'all', 'css_and_js', $ext ) );
+
+			if ( $ext == 'css' ) {
+				/**
+				 * Filter CSS file URL with CDN hostname
+				 *
+				 * @since 2.1
+				 *
+				 * @param string $url
+				*/
+				$url = apply_filters( 'rocket_css_url', $url );
+
+				$tags .= sprintf( '<link rel="stylesheet" href="%s" %s/>', esc_attr( $url ), $data_attr );
+
+			} elseif ( $ext == 'js' ) {
+				/**
+				 * Filter JavaScript file URL with CDN hostname
+				 *
+				 * @since 2.1
+				 *
+				 * @param string $url
+				*/
+				$url = apply_filters( 'rocket_js_url', $url );
+
+				$tags .= sprintf( '<script src="%s" %s></script>', esc_attr( $url ), $data_attr );
+			}
+
+		}
+
+	}
+
+	return $tags;
+}
+
+/*
+ * Wrapper of get_rocket_minify_files() and echoes the result
+ *
+ * @since 2.1
+ */
+function rocket_minify_files( $files, $force_pretty_url = true, $pretty_filename = null )
+{
+	echo get_rocket_minify_files( $files, $force_pretty_url, $pretty_filename );
 }

@@ -1,5 +1,5 @@
 <Files index.php>
-Allow from all
+allow from all
 </Files>
 
 <IfModule mod_rewrite.c>

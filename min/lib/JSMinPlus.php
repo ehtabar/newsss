@@ -170,9 +170,7 @@ define('KEYWORD_VOID', 'void');
 define('KEYWORD_WHILE', 'while');
 define('KEYWORD_WITH', 'with');
 
-/**
- * @deprecated 2.3 This will be removed in Minify 3.0
- */
+
 class JSMinPlus
 {
 	private $parser;
@@ -199,8 +197,6 @@ class JSMinPlus
 
 	public static function minify($js, $filename='')
 	{
-		trigger_error(__CLASS__ . ' is deprecated. This will be removed in Minify 3.0', E_USER_DEPRECATED);
-
 		static $instance;
 
 		// this is a singleton

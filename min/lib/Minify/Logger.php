@@ -10,7 +10,7 @@
  * @package Minify
  * @author Stephen Clay <steve@mrclay.org>
  *
- * @deprecated 2.3 This will be removed in Minify 3.0
+ * @todo lose this singleton! pass log object in Minify::serve and distribute to others
  */
 class Minify_Logger {
 

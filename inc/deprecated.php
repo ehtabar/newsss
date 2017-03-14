@@ -96,6 +96,22 @@ function get_rocket_home_url( $url = null ) {
 }
 endif;
 
+if ( ! function_exists( 'rocket_get_domain' ) ) :
+/**
+ * Get the domain of an URL without subdomain
+ * (ex: rocket_get_domain( 'http://www.geekpress.fr' ) return geekpress.fr
+ *
+ * @source : http://stackoverflow.com/a/15498686
+ * @since 1.0
+ * @deprecated 2.2
+ *
+ */
+function rocket_get_domain( $url ) {
+	_deprecated_function( __FUNCTION__, '2.2' );
+	return false;
+}
+endif;
+
 if ( ! function_exists( 'rocket_has_translation_plugin_active' ) ) :
 /**
  * Check if a translation plugin is activated (WPML or qTranslate)
@@ -216,79 +232,5 @@ if ( ! function_exists( 'get_rocket_subdomains_langs' ) ) :
 function get_rocket_subdomains_langs() {
 	_deprecated_function( __FUNCTION__, '2.2', 'get_rocket_i18n_subdomains()' );
 	return get_rocket_i18n_subdomains();
-}
-endif;
-
-if ( ! function_exists( 'rocket_replace_domain_mapping_siteurl' ) ) :
-/**
- * Get Domain Mapping host based on original URL
- *
- * @since 2.2
- * @deprecated 2.6.5
- *
- */
-function rocket_replace_domain_mapping_siteurl( $url = null ) {
-	_deprecated_function( __FUNCTION__, '2.6.5' );
-	return false;
-}
-endif;
-
-if ( ! function_exists( 'rocket_sanitize_cookie' ) ) :
-/**
- * Used to sanitize values of the "Don't cache pages that use the following cookies" option.
- *
- * @since 2.6.4
- * @deprecated 2.7
- * @deprecated Use rocket_sanitize_key()
- *
- */
-function rocket_sanitize_cookie( $cookie ) {
-	_deprecated_function( __FUNCTION__, '2.7', 'rocket_sanitize_key()' );
-	return rocket_sanitize_key( $cookie );
-}
-endif;
-
-if ( ! function_exists( 'set_rocket_cloudflare_async' ) ) :
-/**
- * Used to set the CloudFlare Rocket Loader value
- *
- * @since 2.5
- * @deprecated 2.8.16
- * @deprecated Use set_rocket_cloudflare_rocket_loader()
- *
- */
-function set_rocket_cloudflare_async( $cf_rocket_loader ) {
-    _deprecated_function( __FUNCTION__, '2.8.16', 'set_rocket_cloudflare_rocket_loader()' );
-    return set_rocket_cloudflare_rocket_loader( $cf_rocket_loader );
-}
-endif;
-
-if ( ! function_exists( 'set_rocket_cloudflare_cache_lvl' ) ) :
-/**
- * Used to set the CloudFlare cache level
- *
- * @since 2.5
- * @deprecated 2.8.16
- * @deprecated Use set_rocket_cloudflare_cache_level()
- *
- */
-function set_rocket_cloudflare_cache_lvl( $cf_cache_level ) {
-    _deprecated_function( __FUNCTION__, '2.8.16', 'set_rocket_cloudflare_cache_level()' );
-    return set_rocket_cloudflare_cache_level( $cf_cache_level );
-}
-endif;
-
-if ( ! function_exists( 'rocket_delete_script_wp_version' ) ) :
-/**
- * Used to remove version query string in CSS/JS URL
- *
- * @since 1.1.6
- * @deprecated 2.9
- * @deprecated Use rocket_browser_cache_busting()
- *
- */
-function rocket_delete_script_wp_version( $src ) {
-    _deprecated_function( __FUNCTION__, '2.9', 'rocket_browser_cache_busting()' );
-    return rocket_browser_cache_busting( $src );
 }
 endif;

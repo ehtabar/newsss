@@ -51,7 +51,6 @@ abstract class Minify_Controller_Base {
             ,'bubbleCssImports' => false
             ,'quiet' => false // serve() will send headers and output
             ,'debug' => false
-            ,'concatOnly' => false
             
             // if you override these, the response codes MUST be directly after
             // the first space.
@@ -146,7 +145,9 @@ abstract class Minify_Controller_Base {
     /**
      * instances of Minify_Source, which provide content and any individual minification needs.
      *
-     * @var Minify_Source[]
+     * @var array
+     * 
+     * @see Minify_Source
      */
     public $sources = array();
     
